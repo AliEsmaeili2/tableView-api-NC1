@@ -27,7 +27,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ciD-Fr-VgP">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ciD-Fr-VgP" customClass="CollectionViewCell" customModule="tableView_api_NC1" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fSC-wR-RJH">
@@ -45,6 +45,9 @@
                                                 <constraint firstAttribute="bottom" secondItem="vLv-K5-Ahq" secondAttribute="bottom" id="pTM-Wi-3c9"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="apiImage" destination="vLv-K5-Ahq" id="648-Zs-lSb"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
