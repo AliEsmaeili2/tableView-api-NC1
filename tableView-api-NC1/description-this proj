@@ -1,0 +1,27 @@
+
+API URL : "https://api.opendota.com/api/heroStats"
+
+
+
+
+
+
+
+
+
+
+
+
+.......................................................
+
+1. create TableView
+    show data in table view
+        [connect API to swift]
+    
+2. show detail on click on a Cell (in table view)
+
+3. create tabBar
+(have 2 tabBar- 1.tableView/2.CollectionView)
+
+5. create collection view in a new tab
+(show data in CollectionView)
