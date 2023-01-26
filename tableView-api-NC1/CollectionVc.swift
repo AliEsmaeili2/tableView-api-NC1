@@ -1,7 +1,7 @@
 
 import UIKit
 
-class CollectionVc: UIViewController {
+class CollectionVc: UIViewController, UICollectionViewDelegate {
     
     var data = [ToDo]()
     
@@ -9,12 +9,17 @@ class CollectionVc: UIViewController {
     
         override func viewDidLoad() {
             super.viewDidLoad()
-                
+            
+            self.collectionView1.delegate = self
+            self.collectionView1.dataSource = self
+            
         APIImages(URL: "https://api.opendota.com/api/heroStats") { result in
             self.data = result
+           // print("daata is : \(self.data)")
             DispatchQueue.main.async {
                 
                 self.collectionView1.reloadData()
+               
             }
         }
     }
