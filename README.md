@@ -1,12 +1,10 @@
-#list of Dota2-all Heroes & their Details(API)
-
--------------------------------------------------------
-##have (tableView & CollectionView in TabBar)
+# list of Dota2 Heroes & their Details
 
 -------------------------------------------------------
 
-API :URL "https://api.opendota.com/api/heroStats"
+## have (tableView(JSON-File) & CollectionView(API) in TabBar Controller)
 
-------------------------------------------------------
+-------------------------------------------------------
 
-
+API       :URL "https://api.opendota.com/api/heroStats"
+JSON-file :URL "https://api.opendota.com/api/heroStats"
