@@ -1,6 +1,7 @@
 
 import UIKit
 
+// MARK: - Download image From URL
 
 extension UIImageView {
     func downloadedFrom(url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
@@ -30,10 +31,10 @@ extension UIImageView {
     }
 }
 
+// MARK: - Connect img & Lbl from main.story to HeroViewController
 
 class HeroViewController: UIViewController {
 
-    
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -44,9 +45,9 @@ class HeroViewController: UIViewController {
     
     @IBOutlet weak var legsLabel: UILabel!
     
-    
     var hero : HeroStats?
     
+    // MARK: - Show & exchange Lbl and Varible to main.story
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +56,6 @@ class HeroViewController: UIViewController {
         attributeLabel.text = hero?.primary_attr
         attackLabel.text = hero?.attack_type
         legsLabel.text = "\((hero?.legs)!)"
-        
     
         let urlString = "https://api.opendota.com"+(hero?.img)!
         let url = URL(string: urlString)

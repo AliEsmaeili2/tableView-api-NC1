@@ -4,8 +4,9 @@ import UIKit
 class CollectionVc: UIViewController, UICollectionViewDelegate {
     
     var data = [ToDo]()
-    
+        
     @IBOutlet weak var collectionView1: UICollectionView!
+    // Connect collectionView in main.storyboard to CollectionVC(viewController)
     
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -44,6 +45,8 @@ class CollectionVc: UIViewController, UICollectionViewDelegate {
 
         }
     }
+
+// MARK: - Struct & Connect-> CollectionView-Datasource
 
 extension CollectionVc : UICollectionViewDataSource {
     

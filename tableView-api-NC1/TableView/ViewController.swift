@@ -1,10 +1,11 @@
 
 import UIKit
 
-
 class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
 
+    
     @IBOutlet weak var tableView: UITableView!
+    //connect tableView in main.storyboard to ViewController
     
     var heroes = [HeroStats]()
         
@@ -20,8 +21,8 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
     }
     
-    //-------------------------
-    
+    // MARK: - Struct & Connect-> TableView to main.storyboard
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return heroes.count
@@ -46,8 +47,8 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    //-------------------------
-    
+    // MARK: - Download JSON
+
     func downloadJSON(completed: @escaping () -> ()){
         
         let url = URL(string: "https://api.opendota.com/api/heroStats")
@@ -55,13 +56,10 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
         URLSession.shared.dataTask(with: url!) { (data, response, error) in
             
             if error == nil {
-                
                 do {
-
                     self.heroes = try JSONDecoder().decode([HeroStats].self, from: data!)
                     
                     DispatchQueue.main.async {
-                        
                         completed()
                     }
          
@@ -70,7 +68,6 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
                     print("JSON Error")
                 }
             }
-            
         }.resume()
     }
 }

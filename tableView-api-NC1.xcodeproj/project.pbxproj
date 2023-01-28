@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		134532CC2982B0200005F008 /* Model-table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134532CB2982B0200005F008 /* Model-table.swift */; };
-		134532D42982B15D0005F008 /* Table-Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 134532D32982B15D0005F008 /* Table-Test.storyboard */; };
 		13672CC92977F5B1004E6A64 /* description-this proj in Resources */ = {isa = PBXBuildFile; fileRef = 13672CC82977F5B1004E6A64 /* description-this proj */; };
 		137099EA29817F0B006DDDDF /* CollectionVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137099E929817F0B006DDDDF /* CollectionVc.swift */; };
 		13AFAAEB2981933D004BD71D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AFAAEA2981933D004BD71D /* Model.swift */; };
@@ -24,7 +23,6 @@
 
 /* Begin PBXFileReference section */
 		134532CB2982B0200005F008 /* Model-table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Model-table.swift"; sourceTree = "<group>"; };
-		134532D32982B15D0005F008 /* Table-Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Table-Test.storyboard"; sourceTree = "<group>"; };
 		13672CC82977F5B1004E6A64 /* description-this proj */ = {isa = PBXFileReference; lastKnownFileType = text; path = "description-this proj"; sourceTree = "<group>"; };
 		137099E929817F0B006DDDDF /* CollectionVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVc.swift; sourceTree = "<group>"; };
 		13AFAAEA2981933D004BD71D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -67,7 +65,6 @@
 				13E12AC82983F587007A728B /* ViewController.swift */,
 				13E12AC62983F407007A728B /* HeroViewController.swift */,
 				134532CB2982B0200005F008 /* Model-table.swift */,
-				134532D32982B15D0005F008 /* Table-Test.storyboard */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -164,7 +161,6 @@
 			files = (
 				13D555C82975C8A300B184BD /* LaunchScreen.storyboard in Resources */,
 				13672CC92977F5B1004E6A64 /* description-this proj in Resources */,
-				134532D42982B15D0005F008 /* Table-Test.storyboard in Resources */,
 				13D555C52975C8A300B184BD /* Assets.xcassets in Resources */,
 				13D555C32975C8A100B184BD /* Main.storyboard in Resources */,
 			);
