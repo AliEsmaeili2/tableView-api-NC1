@@ -20,19 +20,20 @@ class CollectionVc: UIViewController, UICollectionViewDelegate {
             DispatchQueue.main.async {
                 
                 self.collectionView1.reloadData()
-               
             }
         }
     }
     
     // MARK: - Fetching API
 
-    
     func APIImages(URL url:String, completion: @escaping ([ToDo]) -> Void) {
         
         let url = URL(string: url)
+        
         let session = URLSession.shared
-        let dataTask = session.dataTask(with: url!) { data,response,error in
+    
+        let dataTask = session.dataTask(with: url!) { (data,response,error) in
+            
                 do {
                     let fetchingData = try JSONDecoder().decode([ToDo].self, from:data!)
                     completion(fetchingData)
@@ -42,10 +43,8 @@ class CollectionVc: UIViewController, UICollectionViewDelegate {
                 }
             }
             dataTask.resume()
-
         }
     }
-
 // MARK: - Struct & Connect-> CollectionView-Datasource
 
 extension CollectionVc : UICollectionViewDataSource {

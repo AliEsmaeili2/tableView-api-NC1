@@ -1,9 +1,8 @@
 
 import UIKit
 
-class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
+class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource {
 
-    
     @IBOutlet weak var tableView: UITableView!
     //connect tableView in main.storyboard to ViewController
     
@@ -13,10 +12,9 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         
         downloadJSON {
-            
             self.tableView.reloadData()
         }
-        
+    
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -46,7 +44,6 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
             destination.hero = heroes[tableView.indexPathForSelectedRow!.row]
         }
     }
-    
     // MARK: - Download JSON
 
     func downloadJSON(completed: @escaping () -> ()){
@@ -56,6 +53,7 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
         URLSession.shared.dataTask(with: url!) { (data, response, error) in
             
             if error == nil {
+                
                 do {
                     self.heroes = try JSONDecoder().decode([HeroStats].self, from: data!)
                     
@@ -65,7 +63,7 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
          
                 } catch {
                 
-                    print("JSON Error")
+                        print("JSON Error!")
                 }
             }
         }.resume()
