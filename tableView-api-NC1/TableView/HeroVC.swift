@@ -32,7 +32,7 @@ extension UIImageView {
 }
 // MARK: - Connect img & Lbl from main.story to HeroViewController
 
-class HeroViewController: UIViewController {
+class HeroVC: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     

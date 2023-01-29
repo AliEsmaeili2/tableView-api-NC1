@@ -26,10 +26,20 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource {
         return heroes.count
     }
     
+    // for CellRow ->take(img & HeroName)in TableView From JSON(API) for Load to CustomTableViewCell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        cell.textLabel?.text = heroes[indexPath.row].localized_name.capitalized
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
+    
+        let apiData : HeroStats
+        apiData = heroes[indexPath.row]
+        
+        let string = "https://api.opendota.com" + (apiData.img)
+        let url = URL(string: string)
+        
+        cell.imageCell.downloadedFrom(url: url!, contentMode: .scaleToFill)
+        cell.nameCell.text = apiData.localized_name
+            
         return cell
     }
     
@@ -40,7 +50,7 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let destination = segue.destination as? HeroViewController {
+        if let destination = segue.destination as? HeroVC {
             destination.hero = heroes[tableView.indexPathForSelectedRow!.row]
         }
     }
