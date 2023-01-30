@@ -10,7 +10,6 @@ struct HeroStats:Decodable {
     let primary_attr :   String
     let attack_type :    String
     let img :           String
-    let legs :          Int
     let attack_range :   Int
     let move_speed :     Int
     let base_health :    Int
@@ -20,6 +19,5 @@ struct HeroStats:Decodable {
     let base_int :       Int
     let base_attack_min : Int
     let base_attack_max : Int
-  //  let base_armor :       Int
     
 }

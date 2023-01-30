@@ -4,19 +4,19 @@ import UIKit
 class CollectionVc: UIViewController, UICollectionViewDelegate {
     
     var data = [ToDo]()
-        
+    
     @IBOutlet weak var collectionView1: UICollectionView!
     // Connect collectionView in main.storyboard to CollectionVC(viewController)
     
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            
-            self.collectionView1.delegate = self
-            self.collectionView1.dataSource = self
-            
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.collectionView1.delegate = self
+        self.collectionView1.dataSource = self
+        
         APIImages(URL: "https://api.opendota.com/api/heroStats") { result in
             self.data = result
-           // print("daata is : \(self.data)")
+            // print("daata is : \(self.data)")
             DispatchQueue.main.async {
                 
                 self.collectionView1.reloadData()
@@ -25,26 +25,26 @@ class CollectionVc: UIViewController, UICollectionViewDelegate {
     }
     
     // MARK: - Fetching API
-
+    
     func APIImages(URL url:String, completion: @escaping ([ToDo]) -> Void) {
         
         let url = URL(string: url)
         
         let session = URLSession.shared
-    
+        
         let dataTask = session.dataTask(with: url!) { (data,response,error) in
             
-                do {
-                    let fetchingData = try JSONDecoder().decode([ToDo].self, from:data!)
-                    completion(fetchingData)
-                } catch {
-                    
-                    print("Parsing Error")
-                }
+            do {
+                let fetchingData = try JSONDecoder().decode([ToDo].self, from:data!)
+                completion(fetchingData)
+            } catch {
+                
+                print("Parsing Error")
             }
-            dataTask.resume()
         }
+        dataTask.resume()
     }
+}
 // MARK: - Struct & Connect-> CollectionView-Datasource
 
 extension CollectionVc : UICollectionViewDataSource {
@@ -70,7 +70,7 @@ extension CollectionVc : UICollectionViewDataSource {
 }
 
 // MARK: - download API Image
-    
+
 extension UIImageView {
     
     func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
@@ -84,7 +84,7 @@ extension UIImageView {
                 let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
                 let data = data, error == nil,
                 let image = UIImage(data: data)
-                    else { return }
+            else { return }
             
             DispatchQueue.main.async() {
                 

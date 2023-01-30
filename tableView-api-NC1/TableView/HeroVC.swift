@@ -15,8 +15,8 @@ extension UIImageView {
                 let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
                 let data = data, error == nil,
                 let image = UIImage(data: data)
-            
-                else { return }
+                    
+            else { return }
             
             DispatchQueue.main.async() { [weak self] in
                 self?.image = image
@@ -33,7 +33,7 @@ extension UIImageView {
 // MARK: - Connect img & Lbl from main.story to HeroViewController
 
 class HeroVC: UIViewController {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -42,12 +42,10 @@ class HeroVC: UIViewController {
     
     @IBOutlet weak var attackLabel: UILabel!
     
-    @IBOutlet weak var legsLabel: UILabel!
-    
     @IBOutlet weak var healthLabel: UILabel!
     
     @IBOutlet weak var manaLabel: UILabel!
-        
+    
     @IBOutlet weak var strLabel: UILabel!
     
     @IBOutlet weak var agiLabel: UILabel!
@@ -69,11 +67,10 @@ class HeroVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         nameLabel.text = hero?.localized_name
         attributeLabel.text = hero?.primary_attr
         attackLabel.text = hero?.attack_type
-        legsLabel.text = "\((hero?.legs)!)"
         healthLabel.text = "\((hero?.base_health)!)"
         manaLabel.text = "\((hero?.base_mana)!)"
         strLabel.text = "\((hero?.base_str)!)"
@@ -83,8 +80,7 @@ class HeroVC: UIViewController {
         moveLabel.text = "\((hero?.move_speed)!)"
         attackMinLabel.text = "\((hero?.base_attack_min)!)"
         attackMaxLabel.text = "\((hero?.base_attack_max)!)"
-        //armorLabel.text = "\((hero?.base_armor)!)"
-         
+        
         let urlString = "https://api.opendota.com"+(hero?.img)!
         let url = URL(string: urlString)
         imageView.downloadedFrom(url : url!)
