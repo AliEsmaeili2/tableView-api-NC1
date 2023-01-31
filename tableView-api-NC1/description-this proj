@@ -6,7 +6,12 @@ API URL : "https://api.opendota.com/api/heroStats"
 
 idea! -> add button and click on this go to link Dotabuff:(heroDetails)
          position on right the CustomTableViewCell (CELL)
+         
+         
+idea! -> in collectionView create 3 part of int-agi-str and add suitable hero
+         on currect column
 
+..........................................................................
 
 * add Scroll View for Details Page
 

@@ -102,8 +102,8 @@
 			children = (
 				1325A6AF298521AF00D63604 /* Delegate */,
 				134532CD2982B0370005F008 /* collectionView */,
-				13D555C12975C8A100B184BD /* Main.storyboard */,
 				134532CE2982B0840005F008 /* TableView */,
+				13D555C12975C8A100B184BD /* Main.storyboard */,
 				13D555C42975C8A300B184BD /* Assets.xcassets */,
 				13D555C62975C8A300B184BD /* LaunchScreen.storyboard */,
 				13D555C92975C8A300B184BD /* Info.plist */,
