@@ -4,7 +4,7 @@ import UIKit
 
 // MARK: Add important varible [from API]
 
-struct ToDo: Decodable {
+struct Hero: Decodable {
     
     let localized_name : String
     let img : String

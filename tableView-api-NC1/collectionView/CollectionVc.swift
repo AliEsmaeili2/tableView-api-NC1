@@ -3,9 +3,9 @@ import UIKit
 import WebKit
 import SafariServices
 
-class CollectionVc: UIViewController, UICollectionViewDelegate, UISearchBarDelegate {
+class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDelegate {
     
-    var data = [ToDo]()
+    var heroes = [Hero]()
     
     @IBOutlet weak var collectionView1: UICollectionView!
     // Connect collectionView in main.storyboard to CollectionVC(viewController)
@@ -17,7 +17,7 @@ class CollectionVc: UIViewController, UICollectionViewDelegate, UISearchBarDeleg
         self.collectionView1.dataSource = self
         
         APIImages(URL: "https://api.opendota.com/api/heroStats") { result in
-            self.data = result
+            self.heroes = result
             
             DispatchQueue.main.async {
                 
@@ -27,7 +27,7 @@ class CollectionVc: UIViewController, UICollectionViewDelegate, UISearchBarDeleg
     }
     // MARK: - Fetching API
     
-    func APIImages(URL url:String, completion: @escaping ([ToDo]) -> Void) {
+    func APIImages(URL url:String, completion: @escaping ([Hero]) -> Void) {
         
         let url = URL(string: url)
         
@@ -36,13 +36,20 @@ class CollectionVc: UIViewController, UICollectionViewDelegate, UISearchBarDeleg
         let dataTask = session.dataTask(with: url!) { (data,response,error) in
             
             do {
-                let fetchingData = try JSONDecoder().decode([ToDo].self, from:data!)
+                
+                let fetchingData = try JSONDecoder().decode([Hero].self, from:data!)
                 completion(fetchingData)
+                
             } catch {
                 
                 print("Parsing Error")
             }
+            
+//            DispatchQueue.main.sync {
+//                print(self.heroes.count)
+//            }
         }
+        
         dataTask.resume()
     }
 }
@@ -56,20 +63,23 @@ extension CollectionVc : UICollectionViewDataSource {
   //  }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.count
+        return heroes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         
-        let apiData : ToDo
-        apiData = data[indexPath.row]
+        cell.NameLabel.text = heroes[indexPath.row].localized_name
+        
+        let apiData : Hero
+        apiData = heroes[indexPath.row]
         
         let string = "https://api.opendota.com" + (apiData.img)
         let url = URL(string: string)
         
         cell.apiImage.downloaded(from: url!, contentMode: .scaleToFill)
+        cell.apiImage.layer.cornerRadius = cell.apiImage.frame.height / 10
         
         return cell
     }
@@ -101,6 +111,7 @@ extension UIImageView {
                 let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
                 let data = data, error == nil,
                 let image = UIImage(data: data)
+                    
             else { return }
             
             DispatchQueue.main.async() {
@@ -110,6 +121,7 @@ extension UIImageView {
             
         }.resume()
     }
+    
     func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
         
         guard let url = URL(string: link) else { return }
