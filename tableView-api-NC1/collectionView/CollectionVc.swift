@@ -1,7 +1,9 @@
 
 import UIKit
+import WebKit
+import SafariServices
 
-class CollectionVc: UIViewController, UICollectionViewDelegate {
+class CollectionVc: UIViewController, UICollectionViewDelegate, UISearchBarDelegate {
     
     var data = [ToDo]()
     
@@ -16,14 +18,13 @@ class CollectionVc: UIViewController, UICollectionViewDelegate {
         
         APIImages(URL: "https://api.opendota.com/api/heroStats") { result in
             self.data = result
-            // print("daata is : \(self.data)")
+            
             DispatchQueue.main.async {
                 
                 self.collectionView1.reloadData()
             }
         }
     }
-    
     // MARK: - Fetching API
     
     func APIImages(URL url:String, completion: @escaping ([ToDo]) -> Void) {
@@ -49,6 +50,11 @@ class CollectionVc: UIViewController, UICollectionViewDelegate {
 
 extension CollectionVc : UICollectionViewDataSource {
     
+    
+ //   func numberOfSections(in collectionView: UICollectionView) -> Int {
+   //     return 3
+  //  }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
@@ -67,6 +73,17 @@ extension CollectionVc : UICollectionViewDataSource {
         
         return cell
     }
+    
+    
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        print("index is : \(indexPath.row)")
+//        performSegue(withIdentifier: "HeroPageSegue", sender: nil)
+//    }
+    
+  //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+  //  }
+    
 }
 
 // MARK: - download API Image

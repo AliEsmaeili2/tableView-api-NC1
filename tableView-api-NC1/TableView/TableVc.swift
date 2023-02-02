@@ -1,17 +1,12 @@
 
 import UIKit
 
-class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource {
+class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     //connect tableView in main.storyboard to ViewController
-    
-   @IBOutlet weak var searchBar: UISearchBar!
-    
+        
     var heroes = [HeroStats]()
-    
-   // var searchingNames = [String]()
-  //  var searching = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,21 +17,53 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        //call function
+        searchBar()
     }
     
     // MARK: - Struct & Connect-> TableView to main.storyboard
     
+    func searchBar() {
+        
+        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50))
+        searchBar.delegate = self
+        searchBar.showsScopeBar = true
+        searchBar.tintColor = UIColor.lightGray
+      //  searchBar.scopeButtonTitles = ["HeroName", "Attribute"]
+        self.tableView.tableHeaderView = searchBar
+    }
+  
+  //  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+//        if searchText == "" {
+//
+//        } else {
+//
+//            if searchBar.selectedScopeButtonIndex == 0 {
+//                heroes = heroes.filter({ (HeroStats) -> Bool in
+//
+//                    return
+//                /HeroStats.lowercased().contains(searchText.lowercased())
+//                })
+//            } else {
+//
+//                heroes = heroes.filter({ (HeroStats) -> Bool in
+//
+//                    //  return HeroStats.HeroStats.capital.contains(searchText)
+//
+//                })
+//            }
+//        }
+//
+//        self.tableView.reloadData()
+        
+ //   }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        
-  //      if searching {
-            
- //           return searchingNames.count
-            
-  //      } else {
-            
+
             return heroes.count
- //       }
     }
     
     // for CellRow ->take(img & HeroName)in TableView From JSON(API) for Load to CustomTableViewCell
@@ -55,19 +82,6 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource {
         cell.imageCell.downloadedFrom(url: url!, contentMode: .scaleToFill)
         cell.nameCell.text = apiData.localized_name
         
-        /*
-       if searching {
-            
-            cell.nameCell.text = searchingNames[indexPath.row]
-
-            
-        } else {
-            
-            cell.nameCell.text = heroes[indexPath.row].localized_name
-            
-        }
-         */
-    
         // for Button
         cell.cellBtn = {[unowned self] in
             
@@ -88,23 +102,7 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
-        /*
-        
-        func searchBar(_ searchBar : UISearchBar, textDidChange searchText: String){
-            
-            searchingNames = heroes.filter({$0.prefix(searchText.count) == searchText})
-            
-             searching = true
-            tableView.reloadData()
-        }
-    
-    func searchBarCancelButtonClicked(_ searchBar : UISearchBar) {
-        
-        searching = false
-        searchBar.text = ""
-    }
-*/
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         performSegue(withIdentifier: "showDetails", sender: self)

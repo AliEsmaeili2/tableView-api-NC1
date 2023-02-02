@@ -13,6 +13,9 @@ idea! -> in collectionView create 3 part of int-agi-str and add suitable hero
 
 ..........................................................................
 
-* add Scroll View for Details Page
 
 * customize CollectionView
+
+* SearchBar
+
+* AutoLayout for iphones
