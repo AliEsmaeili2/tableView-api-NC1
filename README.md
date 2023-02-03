@@ -2,22 +2,25 @@
 
 -------------------------------------------------------
 
-## An iOS UIKit <a href="https://api.opendota.com/api/heroStats"OpenDota</a> Heroes Browser 
-<img src="https://img.shields.io/badge/-5.3-RED.svg?logo=swift&logoColor=white" />
-
+## An iOS UIKit <a href="https://api.opendota.com/api/heroStats">OpenDota</a> Heroes Browser 
 
 ------------------------------------------------------
 ## Property used in this Project
 
 ✘ TableView
+<br>
 ✘ TableViewCell
+<br>
 ✘ CollectionVIew
+<br>
 ✘ SearchBar
+<br>
 ✘ ScrollView
 ------------------------------------------------------
 ## Stack used in this project
 
 ✔︎ UIKit
+<br>
 
 -------------------------------------------------------
 
