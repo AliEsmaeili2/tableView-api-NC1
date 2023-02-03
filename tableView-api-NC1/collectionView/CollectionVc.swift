@@ -45,9 +45,9 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
                 print("Parsing Error")
             }
             
-//            DispatchQueue.main.sync {
-//                print(self.heroes.count)
-//            }
+            //            DispatchQueue.main.sync {
+            //                print(self.heroes.count)
+            //            }
         }
         
         dataTask.resume()
@@ -58,9 +58,9 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
 extension CollectionVc : UICollectionViewDataSource {
     
     
- //   func numberOfSections(in collectionView: UICollectionView) -> Int {
-   //     return 3
-  //  }
+    //   func numberOfSections(in collectionView: UICollectionView) -> Int {
+    //     return 3
+    //  }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return heroes.count
@@ -85,14 +85,14 @@ extension CollectionVc : UICollectionViewDataSource {
     }
     
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        print("index is : \(indexPath.row)")
-//        performSegue(withIdentifier: "HeroPageSegue", sender: nil)
-//    }
+    //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    //        print("index is : \(indexPath.row)")
+    //        performSegue(withIdentifier: "HeroPageSegue", sender: nil)
+    //    }
     
-  //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
-  //  }
+    //  }
     
 }
 

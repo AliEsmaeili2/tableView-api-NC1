@@ -5,7 +5,7 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
     
     @IBOutlet weak var tableView: UITableView!
     //connect tableView in main.storyboard to ViewController
-        
+    
     var heroes = [HeroStats]()
     
     override func viewDidLoad() {
@@ -30,40 +30,40 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         searchBar.delegate = self
         searchBar.showsScopeBar = true
         searchBar.tintColor = UIColor.lightGray
-      //  searchBar.scopeButtonTitles = ["HeroName", "Attribute"]
+        //  searchBar.scopeButtonTitles = ["HeroName", "Attribute"]
         self.tableView.tableHeaderView = searchBar
     }
-  
-  //  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-//        if searchText == "" {
-//
-//        } else {
-//
-//            if searchBar.selectedScopeButtonIndex == 0 {
-//                heroes = heroes.filter({ (HeroStats) -> Bool in
-//
-//                    return
-//                /HeroStats.lowercased().contains(searchText.lowercased())
-//                })
-//            } else {
-//
-//                heroes = heroes.filter({ (HeroStats) -> Bool in
-//
-//                    //  return HeroStats.HeroStats.capital.contains(searchText)
-//
-//                })
-//            }
-//        }
-//
-//        self.tableView.reloadData()
-        
- //   }
+    
+    //  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    
+    //        if searchText == "" {
+    //
+    //        } else {
+    //
+    //            if searchBar.selectedScopeButtonIndex == 0 {
+    //                heroes = heroes.filter({ (HeroStats) -> Bool in
+    //
+    //                    return
+    //                /HeroStats.lowercased().contains(searchText.lowercased())
+    //                })
+    //            } else {
+    //
+    //                heroes = heroes.filter({ (HeroStats) -> Bool in
+    //
+    //                    //  return HeroStats.HeroStats.capital.contains(searchText)
+    //
+    //                })
+    //            }
+    //        }
+    //
+    //        self.tableView.reloadData()
+    
+    //   }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-            return heroes.count
+        
+        return heroes.count
     }
     
     // for CellRow ->take(img & HeroName)in TableView From JSON(API) for Load to CustomTableViewCell
@@ -88,7 +88,7 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
             let listName = self.heroes[indexPath.row].localized_name
             let listAtt = self.heroes[indexPath.row].primary_attr
             let listAttack_type = self.heroes[indexPath.row].attack_type
-
+            
             
             
             let alert = UIAlertController(title: "\(listName)", message: "Primary_Attribute: \(listAtt) \n Attack_Type: \(listAttack_type)", preferredStyle: .alert)
@@ -102,7 +102,7 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         performSegue(withIdentifier: "showDetails", sender: self)

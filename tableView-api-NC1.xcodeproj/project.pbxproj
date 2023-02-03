@@ -11,6 +11,7 @@
 		13672CC92977F5B1004E6A64 /* description-this proj in Resources */ = {isa = PBXBuildFile; fileRef = 13672CC82977F5B1004E6A64 /* description-this proj */; };
 		137099EA29817F0B006DDDDF /* CollectionVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137099E929817F0B006DDDDF /* CollectionVc.swift */; };
 		137F073E2986EA3D00657CAE /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137F073D2986EA3D00657CAE /* CustomTableViewCell.swift */; };
+		139FAD15298BDC2D006E8956 /* DarkMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139FAD14298BDC2D006E8956 /* DarkMode.swift */; };
 		13AFAAEB2981933D004BD71D /* Model-collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AFAAEA2981933D004BD71D /* Model-collection.swift */; };
 		13AFAAED298198A8004BD71D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AFAAEC298198A8004BD71D /* CollectionViewCell.swift */; };
 		13D555BC2975C8A100B184BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D555BB2975C8A100B184BD /* AppDelegate.swift */; };
@@ -28,6 +29,7 @@
 		13672CC82977F5B1004E6A64 /* description-this proj */ = {isa = PBXFileReference; lastKnownFileType = text; path = "description-this proj"; sourceTree = "<group>"; };
 		137099E929817F0B006DDDDF /* CollectionVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVc.swift; sourceTree = "<group>"; };
 		137F073D2986EA3D00657CAE /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		139FAD14298BDC2D006E8956 /* DarkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkMode.swift; sourceTree = "<group>"; };
 		13AFAAEA2981933D004BD71D /* Model-collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Model-collection.swift"; sourceTree = "<group>"; };
 		13AFAAEC298198A8004BD71D /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		13D555B82975C8A100B184BD /* tableView-api-NC1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tableView-api-NC1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				13DCB41E298BA15700D2BADD /* SettingsVC.swift */,
+				139FAD14298BDC2D006E8956 /* DarkMode.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				139FAD15298BDC2D006E8956 /* DarkMode.swift in Sources */,
 				137F073E2986EA3D00657CAE /* CustomTableViewCell.swift in Sources */,
 				13AFAAED298198A8004BD71D /* CollectionViewCell.swift in Sources */,
 				13E12AC72983F407007A728B /* HeroVC.swift in Sources */,
