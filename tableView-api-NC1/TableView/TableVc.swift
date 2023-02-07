@@ -30,36 +30,9 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         searchBar.delegate = self
         searchBar.showsScopeBar = true
         searchBar.tintColor = UIColor.lightGray
-        //  searchBar.scopeButtonTitles = ["HeroName", "Attribute"]
+          searchBar.scopeButtonTitles = ["HeroName", "Attribute"]
         self.tableView.tableHeaderView = searchBar
     }
-    
-    //  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    
-    //        if searchText == "" {
-    //
-    //        } else {
-    //
-    //            if searchBar.selectedScopeButtonIndex == 0 {
-    //                heroes = heroes.filter({ (HeroStats) -> Bool in
-    //
-    //                    return
-    //                /HeroStats.lowercased().contains(searchText.lowercased())
-    //                })
-    //            } else {
-    //
-    //                heroes = heroes.filter({ (HeroStats) -> Bool in
-    //
-    //                    //  return HeroStats.HeroStats.capital.contains(searchText)
-    //
-    //                })
-    //            }
-    //        }
-    //
-    //        self.tableView.reloadData()
-    
-    //   }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         

@@ -1,7 +1,5 @@
 
 import UIKit
-import WebKit
-import SafariServices
 
 class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDelegate {
     
@@ -45,9 +43,6 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
                 print("Parsing Error")
             }
             
-            //            DispatchQueue.main.sync {
-            //                print(self.heroes.count)
-            //            }
         }
         
         dataTask.resume()

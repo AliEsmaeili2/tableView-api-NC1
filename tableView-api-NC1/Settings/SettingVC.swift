@@ -1,15 +1,13 @@
 
 import UIKit
+import SafariServices
+import WebKit
 
-class SettingsVC: UIViewController {
-    
-    
-    @IBOutlet weak var SettingsTableView: UITableView!
-    
+class SettingVC: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
     }
-    
 }
