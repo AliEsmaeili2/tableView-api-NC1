@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DO0-4Y-9XW">
-                                <rect key="frame" x="0.0" y="44" width="428" height="799"/>
+                                <rect key="frame" x="0.0" y="130" width="428" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="layoutMargins" id="lsj-xb-vyl">
                                     <size key="itemSize" width="100" height="100"/>
@@ -73,15 +73,37 @@
                                     <outlet property="delegate" destination="spY-gu-99B" id="zGp-u2-fDj"/>
                                 </connections>
                             </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5ij-wx-cPO">
+                                <rect key="frame" x="50" y="92" width="328" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="TzN-72-Euy"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="All Heroes"/>
+                                    <segment title="Heroes by Type"/>
+                                </segments>
+                                <connections>
+                                    <action selector="SegmentVC:" destination="spY-gu-99B" eventType="valueChanged" id="Gag-Cj-jj1"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nfU-S1-ROE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="5ij-wx-cPO" firstAttribute="leading" secondItem="nfU-S1-ROE" secondAttribute="leading" constant="50" id="E5m-Pz-n6V"/>
+                            <constraint firstItem="DO0-4Y-9XW" firstAttribute="top" secondItem="5ij-wx-cPO" secondAttribute="bottom" constant="8" id="Frk-sw-3kn"/>
+                            <constraint firstItem="nfU-S1-ROE" firstAttribute="trailing" secondItem="5ij-wx-cPO" secondAttribute="trailing" constant="50" id="IYg-bs-ugl"/>
                             <constraint firstItem="nfU-S1-ROE" firstAttribute="trailing" secondItem="DO0-4Y-9XW" secondAttribute="trailing" id="N6H-qk-ACq"/>
                             <constraint firstItem="DO0-4Y-9XW" firstAttribute="centerX" secondItem="obz-By-s6P" secondAttribute="centerX" id="bz5-Vs-NiZ"/>
-                            <constraint firstItem="DO0-4Y-9XW" firstAttribute="top" secondItem="nfU-S1-ROE" secondAttribute="top" id="eDC-tT-Hjy"/>
-                            <constraint firstItem="nfU-S1-ROE" firstAttribute="bottom" secondItem="DO0-4Y-9XW" secondAttribute="bottom" id="eU0-Yt-pJa"/>
+                            <constraint firstItem="5ij-wx-cPO" firstAttribute="top" secondItem="nfU-S1-ROE" secondAttribute="top" constant="48" id="cEs-uc-9pe"/>
+                            <constraint firstItem="5ij-wx-cPO" firstAttribute="top" secondItem="nfU-S1-ROE" secondAttribute="top" constant="48" id="eB1-hK-2Ri"/>
+                            <constraint firstItem="DO0-4Y-9XW" firstAttribute="top" secondItem="nfU-S1-ROE" secondAttribute="top" constant="86" id="eDC-tT-Hjy"/>
+                            <constraint firstItem="nfU-S1-ROE" firstAttribute="bottom" secondItem="DO0-4Y-9XW" secondAttribute="bottom" constant="-36" id="eU0-Yt-pJa"/>
+                            <constraint firstItem="DO0-4Y-9XW" firstAttribute="top" secondItem="5ij-wx-cPO" secondAttribute="bottom" constant="8" id="gRB-ud-Rpw"/>
+                            <constraint firstItem="DO0-4Y-9XW" firstAttribute="top" secondItem="5ij-wx-cPO" secondAttribute="bottom" constant="8" id="idf-Iu-LNy"/>
                             <constraint firstItem="DO0-4Y-9XW" firstAttribute="leading" secondItem="nfU-S1-ROE" secondAttribute="leading" id="rwq-Lb-tzy"/>
+                            <constraint firstItem="DO0-4Y-9XW" firstAttribute="top" secondItem="5ij-wx-cPO" secondAttribute="bottom" constant="8" id="u89-J3-BYo"/>
+                            <constraint firstItem="DO0-4Y-9XW" firstAttribute="top" secondItem="nfU-S1-ROE" secondAttribute="top" constant="86" id="xyb-zW-PjZ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="CollectionView" id="9uA-6L-CiZ">
@@ -732,7 +754,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Srf-N2-dOl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2501" y="97"/>
+            <point key="canvasLocation" x="2501" y="221"/>
         </scene>
         <!--Setting-->
         <scene sceneID="6uD-wH-lTa">
@@ -749,7 +771,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tlr-Zk-ABc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="861" y="97"/>
+            <point key="canvasLocation" x="861" y="221"/>
         </scene>
         <!--TableView-->
         <scene sceneID="ZSJ-Ft-Jba">

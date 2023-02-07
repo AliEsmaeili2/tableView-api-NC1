@@ -30,7 +30,7 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         searchBar.delegate = self
         searchBar.showsScopeBar = true
         searchBar.tintColor = UIColor.lightGray
-          searchBar.scopeButtonTitles = ["HeroName", "Attribute"]
+       //   searchBar.scopeButtonTitles = ["HeroName", "Attribute"]
         self.tableView.tableHeaderView = searchBar
     }
     

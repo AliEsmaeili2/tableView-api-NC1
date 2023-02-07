@@ -5,6 +5,16 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
     
     var heroes = [Hero]()
     
+    @IBAction func SegmentVC(_ sender: UISegmentedControl) {
+        
+//        switch sender.selectedSegmentIndex {
+//            
+//
+//        default:
+//        }
+    }
+    
+    
     @IBOutlet weak var collectionView1: UICollectionView!
     // Connect collectionView in main.storyboard to CollectionVC(viewController)
     
