@@ -11,18 +11,16 @@ class CustomTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
         
+        super.setSelected(selected, animated: animated)
     }
     
     @IBAction func BtnTapped(_ sender: Any) {
         
         cellBtn?()
     }
-    
-    
 }

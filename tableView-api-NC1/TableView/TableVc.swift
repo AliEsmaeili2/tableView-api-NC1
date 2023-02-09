@@ -4,7 +4,6 @@ import UIKit
 class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    //connect tableView in main.storyboard to ViewController
     
     var heroes = [HeroStats]()
     
@@ -30,7 +29,7 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         searchBar.delegate = self
         searchBar.showsScopeBar = true
         searchBar.tintColor = UIColor.lightGray
-       //   searchBar.scopeButtonTitles = ["HeroName", "Attribute"]
+        //searchBar.scopeButtonTitles = ["HeroName", "Attribute"]
         self.tableView.tableHeaderView = searchBar
     }
     
@@ -39,11 +38,9 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         return heroes.count
     }
     
-    // for CellRow ->take(img & HeroName)in TableView From JSON(API) for Load to CustomTableViewCell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
-        
         
         let apiData : HeroStats
         apiData = heroes[indexPath.row]
@@ -59,12 +56,9 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         cell.cellBtn = {[unowned self] in
             
             let listName = self.heroes[indexPath.row].localized_name
-            let listAtt = self.heroes[indexPath.row].primary_attr
-            let listAttack_type = self.heroes[indexPath.row].attack_type
+            let role = self.heroes[indexPath.row].roles
             
-            
-            
-            let alert = UIAlertController(title: "\(listName)", message: "Primary_Attribute: \(listAtt) \n Attack_Type: \(listAttack_type)", preferredStyle: .alert)
+            let alert = UIAlertController(title: "\(listName)", message: "Roles:\(role)", preferredStyle: .alert)
             
             let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             

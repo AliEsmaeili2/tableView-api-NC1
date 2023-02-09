@@ -4,19 +4,9 @@ import UIKit
 class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDelegate {
     
     var heroes = [Hero]()
-    
-    @IBAction func SegmentVC(_ sender: UISegmentedControl) {
-        
-//        switch sender.selectedSegmentIndex {
-//            
-//
-//        default:
-//        }
-    }
-    
+    var heroesStack = [Hero]()
     
     @IBOutlet weak var collectionView1: UICollectionView!
-    // Connect collectionView in main.storyboard to CollectionVC(viewController)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +20,47 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
             DispatchQueue.main.async {
                 
                 self.collectionView1.reloadData()
+                
             }
         }
     }
+    
+    @IBAction func didTabSegment(_ sender: UISegmentedControl) {
+        
+        
+        if sender.selectedSegmentIndex == 1  {
+            
+            heroes = heroes.filter({ $0.attack_type.starts(with: "R")})
+        }
+        
+        else if sender.selectedSegmentIndex == 2  {
+            
+            heroesStack.removeAll()
+            heroesStack = heroes.filter({ $0.attack_type.starts(with: "M")})
+        }
+        
+        else if sender.selectedSegmentIndex == 3  {
+            
+            heroesStack.removeAll()
+            heroesStack = heroes.filter({ $0.primary_attr.starts(with: "s")})
+        }
+        
+        else if sender.selectedSegmentIndex == 4  {
+            
+            heroesStack.removeAll()
+            heroesStack = heroes.filter({ $0.primary_attr.starts(with: "a")})
+        }
+        
+        else if sender.selectedSegmentIndex == 5  {
+            
+            heroesStack.removeAll()
+            heroesStack = heroes.filter({ $0.primary_attr.starts(with: "i")})
+            // heroes = heroes.filter({ $0.roles.starts(with: ["Carry"])})
+        }
+        
+        collectionView1.reloadData()
+    }
+    
     // MARK: - Fetching API
     
     func APIImages(URL url:String, completion: @escaping ([Hero]) -> Void) {
@@ -63,15 +91,13 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
 extension CollectionVc : UICollectionViewDataSource {
     
     
-    //   func numberOfSections(in collectionView: UICollectionView) -> Int {
-    //     return 3
-    //  }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return heroes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         
@@ -87,18 +113,8 @@ extension CollectionVc : UICollectionViewDataSource {
         cell.apiImage.layer.cornerRadius = cell.apiImage.frame.height / 10
         
         return cell
+        
     }
-    
-    
-    //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    //        print("index is : \(indexPath.row)")
-    //        performSegue(withIdentifier: "HeroPageSegue", sender: nil)
-    //    }
-    
-    //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
-    //  }
-    
 }
 
 // MARK: - download API Image

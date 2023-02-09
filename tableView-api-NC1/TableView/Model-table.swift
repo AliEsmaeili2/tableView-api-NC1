@@ -10,6 +10,7 @@ struct HeroStats:Decodable {
     let primary_attr :   String
     let attack_type :    String
     let img :           String
+    let roles :         [String]
     let attack_range :   Int
     let move_speed :     Int
     let base_health :    Int
