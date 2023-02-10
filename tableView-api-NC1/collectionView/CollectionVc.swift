@@ -8,6 +8,7 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
     
     @IBOutlet weak var collectionView1: UICollectionView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,42 +24,66 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
                 
             }
         }
+        
+        activeIndicator()
     }
+    
+    // MARK: - Segment Control
     
     @IBAction func didTabSegment(_ sender: UISegmentedControl) {
         
-        
+        heroesStack.removeAll()
+
         if sender.selectedSegmentIndex == 1  {
             
-            heroes = heroes.filter({ $0.attack_type.starts(with: "R")})
+            heroesStack = heroes.filter({ $0.attack_type.starts(with: "R")}) //Ranged
         }
         
         else if sender.selectedSegmentIndex == 2  {
             
-            heroesStack.removeAll()
-            heroesStack = heroes.filter({ $0.attack_type.starts(with: "M")})
+            heroesStack = heroes.filter({ $0.attack_type.starts(with: "M")}) //Melee
         }
         
         else if sender.selectedSegmentIndex == 3  {
             
-            heroesStack.removeAll()
-            heroesStack = heroes.filter({ $0.primary_attr.starts(with: "s")})
+            heroesStack = heroes.filter({ $0.primary_attr.starts(with: "s")}) //str
         }
         
         else if sender.selectedSegmentIndex == 4  {
             
-            heroesStack.removeAll()
-            heroesStack = heroes.filter({ $0.primary_attr.starts(with: "a")})
+            heroesStack = heroes.filter({ $0.primary_attr.starts(with: "a")}) //agi
         }
         
         else if sender.selectedSegmentIndex == 5  {
             
-            heroesStack.removeAll()
-            heroesStack = heroes.filter({ $0.primary_attr.starts(with: "i")})
-            // heroes = heroes.filter({ $0.roles.starts(with: ["Carry"])})
+            heroesStack = heroes.filter({ $0.primary_attr.starts(with: "i")}) //int
         }
         
         collectionView1.reloadData()
+    }
+    
+    // MARK: - Activity Indicator View
+    
+    func activeIndicator () {
+        let container = UIView()
+        container.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+
+        let activeIndicator = UIActivityIndicatorView(style: .large)
+
+        activeIndicator.center = self.view.center
+        //activeIndicator.color = .red
+
+        container.addSubview(activeIndicator)
+        self.view.addSubview(container)
+
+        activeIndicator.startAnimating()
+        activeIndicator.hidesWhenStopped = true
+
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
+            UIApplication.shared.endIgnoringInteractionEvents()
+            activeIndicator.stopAnimating()
+        }
     }
     
     // MARK: - Fetching API
@@ -86,14 +111,16 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
         dataTask.resume()
     }
 }
-// MARK: - Struct & Connect-> CollectionView-Datasource
+// MARK: - Struct & Connect-> CollectionView-Datasource [CELL]
 
 extension CollectionVc : UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return heroes.count
+                    
+         //   return heroes.count
+            return heroesStack.count
+       
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -101,10 +128,10 @@ extension CollectionVc : UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         
-        cell.NameLabel.text = heroes[indexPath.row].localized_name
+        cell.NameLabel.text = heroesStack[indexPath.row].localized_name
         
         let apiData : Hero
-        apiData = heroes[indexPath.row]
+        apiData = heroesStack[indexPath.row]
         
         let string = "https://api.opendota.com" + (apiData.img)
         let url = URL(string: string)
