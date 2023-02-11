@@ -8,7 +8,7 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
     var heroes = [HeroStats]()
     
     // MARK: - func viewDidLoad()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +25,7 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
     }
     
     // MARK: - SearchBar
-
+    
     func searchBar() {
         
         let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50))
@@ -41,20 +41,20 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
     func activeIndicator () {
         let container = UIView()
         container.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-
+        
         let activeIndicator = UIActivityIndicatorView(style: .large)
-
+        
         activeIndicator.center = self.view.center
         //activeIndicator.color = .red
-
+        
         container.addSubview(activeIndicator)
         self.view.addSubview(container)
-
+        
         activeIndicator.startAnimating()
         activeIndicator.hidesWhenStopped = true
-
+        
         UIApplication.shared.beginIgnoringInteractionEvents()
-        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { timer in
             UIApplication.shared.endIgnoringInteractionEvents()
             activeIndicator.stopAnimating()
         }

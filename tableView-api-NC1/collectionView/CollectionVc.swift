@@ -8,7 +8,6 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
     
     @IBOutlet weak var collectionView1: UICollectionView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,11 +20,58 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
             DispatchQueue.main.async {
                 
                 self.collectionView1.reloadData()
-                
             }
         }
         
         activeIndicator()
+    }
+    
+    // MARK: - Activity Indicator
+    
+    func activeIndicator () {
+        let container = UIView()
+        container.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        
+        let activeIndicator = UIActivityIndicatorView(style: .large)
+        
+        activeIndicator.center = self.view.center
+        //activeIndicator.color = .red
+        
+        container.addSubview(activeIndicator)
+        self.view.addSubview(container)
+        
+        activeIndicator.startAnimating()
+        activeIndicator.hidesWhenStopped = true
+        
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { timer in
+            UIApplication.shared.endIgnoringInteractionEvents()
+            activeIndicator.stopAnimating()
+        }
+    }
+    
+    // MARK: - Fetching API
+    
+    func APIImages(URL url:String, completion: @escaping ([Hero]) -> Void) {
+        
+        let url = URL(string: url)
+        
+        let session = URLSession.shared
+        
+        let dataTask = session.dataTask(with: url!) { (data,response,error) in
+            
+            do {
+                
+                let fetchingData = try JSONDecoder().decode([Hero].self, from:data!)
+                completion(fetchingData)
+                
+            } catch {
+                
+                print("Parsing Error")
+            }
+        }
+        
+        dataTask.resume()
     }
     
     // MARK: - Segment Control
@@ -33,7 +79,12 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
     @IBAction func didTabSegment(_ sender: UISegmentedControl) {
         
         heroesStack.removeAll()
-
+        
+        if sender.selectedSegmentIndex == 0 {
+            
+            heroesStack = heroes.filter({ $0.name.starts(with: "n")})
+        }
+        
         if sender.selectedSegmentIndex == 1  {
             
             heroesStack = heroes.filter({ $0.attack_type.starts(with: "R")}) //Ranged
@@ -61,55 +112,6 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
         
         collectionView1.reloadData()
     }
-    
-    // MARK: - Activity Indicator View
-    
-    func activeIndicator () {
-        let container = UIView()
-        container.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-
-        let activeIndicator = UIActivityIndicatorView(style: .large)
-
-        activeIndicator.center = self.view.center
-        //activeIndicator.color = .red
-
-        container.addSubview(activeIndicator)
-        self.view.addSubview(container)
-
-        activeIndicator.startAnimating()
-        activeIndicator.hidesWhenStopped = true
-
-        UIApplication.shared.beginIgnoringInteractionEvents()
-        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
-            UIApplication.shared.endIgnoringInteractionEvents()
-            activeIndicator.stopAnimating()
-        }
-    }
-    
-    // MARK: - Fetching API
-    
-    func APIImages(URL url:String, completion: @escaping ([Hero]) -> Void) {
-        
-        let url = URL(string: url)
-        
-        let session = URLSession.shared
-        
-        let dataTask = session.dataTask(with: url!) { (data,response,error) in
-            
-            do {
-                
-                let fetchingData = try JSONDecoder().decode([Hero].self, from:data!)
-                completion(fetchingData)
-                
-            } catch {
-                
-                print("Parsing Error")
-            }
-            
-        }
-        
-        dataTask.resume()
-    }
 }
 // MARK: - Struct & Connect-> CollectionView-Datasource [CELL]
 
@@ -117,10 +119,8 @@ extension CollectionVc : UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-                    
-         //   return heroes.count
-            return heroesStack.count
-       
+        
+        return heroesStack.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
