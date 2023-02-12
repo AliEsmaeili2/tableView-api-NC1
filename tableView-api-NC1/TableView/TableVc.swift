@@ -1,11 +1,15 @@
 
 import UIKit
 
-class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
     
     @IBOutlet weak var tableView: UITableView!
     
+    //MARK: - variable defining
+    
     var heroes = [HeroStats]()
+    var filteredHeroes = [HeroStats]()
+    var searchBar = UISearchBar()
     
     // MARK: - func viewDidLoad()
     
@@ -19,27 +23,34 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         tableView.delegate = self
         tableView.dataSource = self
         
-        //call function
-        searchBar()
+        //searchBar controlls
+        searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50))
+        searchBar.searchBarStyle = .minimal
+        searchBar.placeholder = "Search heroes"
+        searchBar.delegate = self
+        tableView.tableHeaderView = searchBar
+        
+        //call func
         activeIndicator()
     }
     
     // MARK: - SearchBar
     
-    func searchBar() {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50))
-        searchBar.delegate = self
-        searchBar.showsScopeBar = true
-        searchBar.tintColor = UIColor.lightGray
-        //searchBar.scopeButtonTitles = ["HeroName", "Attribute"]
-        self.tableView.tableHeaderView = searchBar
+        filteredHeroes = searchText.isEmpty ? heroes : heroes.filter { (hero: HeroStats) -> Bool in
+            return hero.localized_name.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        }
+        
+        tableView.reloadData()
     }
     
     // MARK: - Activity Indicator View
     
     func activeIndicator () {
+        
         let container = UIView()
+        
         container.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         
         let activeIndicator = UIActivityIndicatorView(style: .large)
@@ -64,7 +75,9 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return heroes.count
+        return searchBar.text?.isEmpty == true ? heroes.count : filteredHeroes.count
+        //  return heroes.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,7 +85,9 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
         
         let apiData : HeroStats
-        apiData = heroes[indexPath.row]
+        
+        apiData = searchBar.text?.isEmpty == true ? heroes[indexPath.row] : filteredHeroes[indexPath.row]
+        // apiData = heroes[indexPath.row]
         
         //for load img from JSON
         let string = "https://api.opendota.com" + (apiData.img)
@@ -107,6 +122,7 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let destination = segue.destination as? HeroVC {
+            
             destination.hero = heroes[tableView.indexPathForSelectedRow!.row]
         }
     }

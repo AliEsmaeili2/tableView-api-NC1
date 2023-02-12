@@ -133,7 +133,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4zX-hJ-VqE">
-                                <rect key="frame" x="0.0" y="103" width="430" height="829"/>
+                                <rect key="frame" x="0.0" y="103" width="430" height="777"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="nR1-fi-ze5" customClass="CustomTableViewCell" customModule="tableView_api_NC1" customModuleProvider="target">
@@ -160,7 +160,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hero Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AU8-vI-qZu">
                                                     <rect key="frame" x="106.66666666666669" y="20" width="200" height="60"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="198.66666666666669" id="SG1-se-lP5"/>
+                                                        <constraint firstAttribute="width" constant="200" id="SG1-se-lP5"/>
                                                         <constraint firstAttribute="height" constant="60" id="TXp-kf-f7l"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
@@ -199,12 +199,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4zX-hJ-VqE" firstAttribute="trailing" secondItem="dzM-8H-KLQ" secondAttribute="trailing" id="EDz-Y8-5Ca"/>
-                            <constraint firstAttribute="bottom" secondItem="4zX-hJ-VqE" secondAttribute="bottom" id="O17-PF-XwY"/>
+                            <constraint firstAttribute="bottom" secondItem="4zX-hJ-VqE" secondAttribute="bottom" constant="52" id="O17-PF-XwY"/>
                             <constraint firstItem="4zX-hJ-VqE" firstAttribute="leading" secondItem="EDl-xM-Ptx" secondAttribute="leading" id="PgE-gr-Kv8"/>
                             <constraint firstItem="4zX-hJ-VqE" firstAttribute="leading" secondItem="dzM-8H-KLQ" secondAttribute="leading" id="PhK-k1-Y5d"/>
                             <constraint firstAttribute="trailing" secondItem="4zX-hJ-VqE" secondAttribute="trailing" id="Pnn-SE-xkz"/>
                             <constraint firstItem="4zX-hJ-VqE" firstAttribute="top" secondItem="dzM-8H-KLQ" secondAttribute="top" id="Vl1-aK-GXI"/>
-                            <constraint firstAttribute="bottom" secondItem="4zX-hJ-VqE" secondAttribute="bottom" id="vf7-Qk-Mrf"/>
+                            <constraint firstAttribute="bottom" secondItem="4zX-hJ-VqE" secondAttribute="bottom" constant="52" id="vf7-Qk-Mrf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Heroes of Dota2" id="JuT-XG-3bN"/>
@@ -715,7 +715,7 @@
     <resources>
         <image name="cross" catalog="system" width="128" height="116"/>
         <image name="gear" catalog="system" width="128" height="122"/>
-        <image name="square.grid.3x3" catalog="system" width="128" height="113"/>
+        <image name="square.grid.3x3" catalog="system" width="32" height="32"/>
         <image name="table" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
