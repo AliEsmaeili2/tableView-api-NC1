@@ -94,6 +94,7 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         let url = URL(string: string)
         
         cell.imageCell.downloadedFrom(url: url!, contentMode: .scaleToFill)
+        cell.imageCell.layer.cornerRadius = cell.imageCell.frame.height / 2
         cell.nameCell.text = apiData.localized_name
         
         // for Button

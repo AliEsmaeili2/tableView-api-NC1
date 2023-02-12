@@ -5,42 +5,41 @@ import WebKit
 
 class SettingVC: UIViewController {
     
-    private let lightModeKey = "lightMode"
+    
+    @IBOutlet weak var darkModeSwitch: UISwitch!
+    @IBOutlet weak var textLabelMode : UILabel!
+    @IBOutlet weak var textLabelWeb  : UILabel!
+    @IBOutlet weak var viewMode      : UIView!
+    @IBOutlet weak var viewWeb       : UIView!
+    
+    var isDarkMode = false {
+        
+        didSet {
+            
+            updateUI()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set up the switch
-        let switchControl = UISwitch()
-        switchControl.addTarget(self, action: #selector(switchChanged), for: .valueChanged)
-        
-        // Check if light mode is on
-        let isLightModeOn = UserDefaults.standard.bool(forKey: lightModeKey)
-        switchControl.isOn = isLightModeOn
-        
-        // Set up the bar button item for the switch
-        let switchItem = UIBarButtonItem(customView: switchControl)
-        navigationItem.rightBarButtonItem = switchItem
-        
-        // Update the view's appearance based on the switch state
-        updateAppearance(for: isLightModeOn)
+        darkModeSwitch.addTarget(self, action: #selector(switchValueDidChange), for: .valueChanged)
     }
     
-    @objc func switchChanged(sender: UISwitch) {
-        UserDefaults.standard.set(sender.isOn, forKey: lightModeKey)
-        updateAppearance(for: sender.isOn)
+    @objc func switchValueDidChange() {
+        
+        isDarkMode = darkModeSwitch.isOn
     }
     
-    private func updateAppearance(for isLightModeOn: Bool) {
-        if isLightModeOn {
-            // Set up the appearance for light mode
-            view.backgroundColor = .white
-            
-            navigationController?.navigationBar.barStyle = .black
-        } else {
-            // Set up the appearance for dark mode
-            view.backgroundColor = .darkGray
-            navigationController?.navigationBar.barStyle = .default
-        }
+    func updateUI() {
+        
+        view.backgroundColor     = isDarkMode ? .darkGray : .white
+        textLabelMode.textColor  = isDarkMode ? .white    : .black
+        textLabelWeb.textColor   = isDarkMode ? .white    : .black
+        viewMode.backgroundColor = isDarkMode ? .gray     : .systemGray5
+        viewWeb.backgroundColor  = isDarkMode ? .gray     : .systemGray5
+        
+        navigationController?.navigationBar.barTintColor        = isDarkMode ? .black : .white
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: isDarkMode ? UIColor.white : UIColor.black]
     }
 }
