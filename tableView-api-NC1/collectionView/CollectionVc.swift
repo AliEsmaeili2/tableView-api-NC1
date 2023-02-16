@@ -5,7 +5,7 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
     
     var heroes = [Hero]()
     var heroesStack = [Hero]()
-    
+    //   var currentSegmnet : Int = 0
     @IBOutlet weak var collectionView1: UICollectionView!
     
     override func viewDidLoad() {
@@ -19,7 +19,7 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
             
             DispatchQueue.main.async {
                 
-                self.collectionView1.reloadData()
+                self.activeIndicator()
             }
         }
         
@@ -29,24 +29,23 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
     // MARK: - Activity Indicator
     
     func activeIndicator () {
+        
         let container = UIView()
         container.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         
         let activeIndicator = UIActivityIndicatorView(style: .large)
-        
         activeIndicator.center = self.view.center
-        //activeIndicator.color = .red
         
         container.addSubview(activeIndicator)
         self.view.addSubview(container)
         
         activeIndicator.startAnimating()
         activeIndicator.hidesWhenStopped = true
-        
-        UIApplication.shared.beginIgnoringInteractionEvents()
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { timer in
-            UIApplication.shared.endIgnoringInteractionEvents()
+        // Hide the container view and stop the indicator animation
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            
             activeIndicator.stopAnimating()
+            container.removeFromSuperview()
         }
     }
     

@@ -5,7 +5,6 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
     
     @IBOutlet weak var tableView: UITableView!
     
-    //MARK: - variable defining
     
     var heroes = [HeroStats]()
     var filteredHeroes = [HeroStats]()
@@ -17,7 +16,10 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         super.viewDidLoad()
         
         downloadJSON {
+            
+            self.filteredHeroes = self.heroes
             self.tableView.reloadData()
+            
         }
         
         tableView.delegate = self
@@ -37,11 +39,9 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
     // MARK: - SearchBar
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
         filteredHeroes = searchText.isEmpty ? heroes : heroes.filter { (hero: HeroStats) -> Bool in
             return hero.localized_name.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
         }
-        
         tableView.reloadData()
     }
     
@@ -50,44 +50,41 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
     func activeIndicator () {
         
         let container = UIView()
-        
         container.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         
         let activeIndicator = UIActivityIndicatorView(style: .large)
-        
         activeIndicator.center = self.view.center
-        //activeIndicator.color = .red
         
         container.addSubview(activeIndicator)
         self.view.addSubview(container)
         
         activeIndicator.startAnimating()
         activeIndicator.hidesWhenStopped = true
-        
-        UIApplication.shared.beginIgnoringInteractionEvents()
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { timer in
-            UIApplication.shared.endIgnoringInteractionEvents()
+        // Hide the container view and stop the indicator animation
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            
             activeIndicator.stopAnimating()
+            container.removeFromSuperview()
         }
     }
-    
     // MARK: - Struct & Connect-> TableView to main.storyboard
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return searchBar.text?.isEmpty == true ? heroes.count : filteredHeroes.count
-        //  return heroes.count
-        
+        //0  return heroes.count
+        //1  return searchBar.text?.isEmpty == true ? heroes.count : filteredHeroes.count
+        return filteredHeroes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
         
-        let apiData : HeroStats
+        //1 let apiData : HeroStats
+        //1 apiData = searchBar.text?.isEmpty == true ? heroes[indexPath.row] : filteredHeroes[indexPath.row]
+        //0 apiData = heroes[indexPath.row]
         
-        apiData = searchBar.text?.isEmpty == true ? heroes[indexPath.row] : filteredHeroes[indexPath.row]
-        // apiData = heroes[indexPath.row]
+        let apiData = filteredHeroes[indexPath.row]
         
         //for load img from JSON
         let string = "https://api.opendota.com" + (apiData.img)
@@ -124,7 +121,9 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         
         if let destination = segue.destination as? HeroVC {
             
-            destination.hero = heroes[tableView.indexPathForSelectedRow!.row]
+            //0 destination.hero = heroes[tableView.indexPathForSelectedRow!.row]
+            destination.hero = filteredHeroes[tableView.indexPathForSelectedRow!.row]
+            
         }
     }
     // MARK: - Download JSON
@@ -141,7 +140,9 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
                     self.heroes = try JSONDecoder().decode([HeroStats].self, from: data!)
                     
                     DispatchQueue.main.async {
+                        
                         completed()
+                      //  self.activeIndicator()
                     }
                     
                 } catch {

@@ -133,7 +133,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4zX-hJ-VqE">
-                                <rect key="frame" x="0.0" y="155" width="430" height="725"/>
+                                <rect key="frame" x="0.0" y="103" width="430" height="777"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="nR1-fi-ze5" customClass="CustomTableViewCell" customModule="tableView_api_NC1" customModuleProvider="target">
@@ -725,6 +725,7 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="Hks-Oo-0AS" firstAttribute="width" secondItem="cgV-OF-k2t" secondAttribute="width" multiplier="1.84" constant="28" id="1wk-Ih-Sx6"/>
                                     <constraint firstItem="Hks-Oo-0AS" firstAttribute="centerY" secondItem="wT7-fx-GDw" secondAttribute="centerY" constant="1.5" id="6BB-bb-gCA"/>
@@ -734,6 +735,9 @@
                                     <constraint firstItem="Hks-Oo-0AS" firstAttribute="centerY" secondItem="cgV-OF-k2t" secondAttribute="centerY" constant="1" id="mom-Pg-ZyZ"/>
                                     <constraint firstItem="cgV-OF-k2t" firstAttribute="trailing" secondItem="wT7-fx-GDw" secondAttribute="trailingMargin" id="zFN-D8-CB3"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Yb5-8d-NKW" appends="YES" id="nJD-PE-oN3"/>
+                                </connections>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vB0-YT-men"/>
@@ -761,6 +765,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O1M-Z8-BF5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Yb5-8d-NKW"/>
             </objects>
             <point key="canvasLocation" x="2499.0697674418602" y="220.81545064377684"/>
         </scene>
