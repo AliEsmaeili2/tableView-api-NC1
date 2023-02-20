@@ -12,9 +12,6 @@ position on right the CustomTableViewCell (CELL)
 
 ..........................................................................
 
-
-* update segment index == 0 CollectionView
-
 * update activityIndicator
 
 * update Setting for old iphones
@@ -22,10 +19,6 @@ position on right the CustomTableViewCell (CELL)
 * add gessher in settings (View)
 
 * add webView SAFARI
-
-
-
-
 
 
 ..............................................................................

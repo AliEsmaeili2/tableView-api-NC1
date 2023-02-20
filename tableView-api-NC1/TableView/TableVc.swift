@@ -98,8 +98,8 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         // for Button
         cell.cellBtn = {[unowned self] in
             
-            let listName = self.heroes[indexPath.row].localized_name
-            let role = self.heroes[indexPath.row].roles
+            let listName = self.filteredHeroes[indexPath.row].localized_name
+            let role = self.filteredHeroes[indexPath.row].roles
             
             let alert = UIAlertController(title: "\(listName)", message: "Roles:\(role)", preferredStyle: .alert)
             
