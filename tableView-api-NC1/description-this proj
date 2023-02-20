@@ -13,12 +13,15 @@ position on right the CustomTableViewCell (CELL)
 ..........................................................................
 
 
-* SearchBar
+* update segment index == 0 CollectionView
 
-* AutoLayout for iphones
+* update activityIndicator
 
-* progress view
+* update Setting for old iphones
 
+* add gessher in settings (View)
+
+* add webView SAFARI
 
 
 

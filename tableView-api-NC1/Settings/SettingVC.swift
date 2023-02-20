@@ -39,7 +39,7 @@ class SettingVC: UIViewController {
         viewMode.backgroundColor = isDarkMode ? .gray     : .systemGray5
         viewWeb.backgroundColor  = isDarkMode ? .gray     : .systemGray5
         
-        navigationController?.navigationBar.barTintColor        = isDarkMode ? .black : .white
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: isDarkMode ? UIColor.white : UIColor.black]
+       // navigationController?.navigationBar.barTintColor        = isDarkMode ? .black : .white
+       // navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: isDarkMode ? UIColor.white : UIColor.black]
     }
 }

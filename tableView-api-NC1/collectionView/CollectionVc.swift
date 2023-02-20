@@ -5,7 +5,7 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
     
     var heroes = [Hero]()
     var heroesStack = [Hero]()
-    //   var currentSegmnet : Int = 0
+    
     @IBOutlet weak var collectionView1: UICollectionView!
     
     override func viewDidLoad() {
@@ -16,6 +16,7 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
         
         APIImages(URL: "https://api.opendota.com/api/heroStats") { result in
             self.heroes = result
+            self.heroesStack = result
             
             DispatchQueue.main.async {
                 
@@ -29,6 +30,8 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
     // MARK: - Activity Indicator
     
     func activeIndicator () {
+        
+        self.collectionView1.reloadData()
         
         let container = UIView()
         container.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
@@ -81,7 +84,7 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
         
         if sender.selectedSegmentIndex == 0 {
             
-            heroesStack = heroes.filter({ $0.name.starts(with: "n")})
+            heroesStack = heroes
         }
         
         if sender.selectedSegmentIndex == 1  {
@@ -120,6 +123,7 @@ extension CollectionVc : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return heroesStack.count
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

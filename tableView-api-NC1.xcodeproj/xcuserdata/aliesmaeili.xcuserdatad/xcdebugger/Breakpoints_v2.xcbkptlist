@@ -14,8 +14,8 @@
             filePath = "tableView-api-NC1/collectionView/CollectionVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "APIImages(URL:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -24,6 +24,70 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A15EC69B-C0F0-4FCE-977E-3D4D98F2A70C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tableView-api-NC1/collectionView/CollectionVc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "APIImages(URL:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F5FB9FA2-64BD-47A6-A99B-E4A1643E7DF4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tableView-api-NC1/collectionView/CollectionVc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "APIImages(URL:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F5FB9FA2-64BD-47A6-A99B-E4A1643E7DF4 - 8d2e5d6c8bc064c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in tableView_api_NC1.CollectionVc.APIImages(URL: Swift.String, completion: (Swift.Array&lt;tableView_api_NC1.Hero&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "tableView-api-NC1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aliesmaeili/Desktop/Xcode-projects/tableView-api-NC1/tableView-api-NC1/collectionView/CollectionVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "559">
+               </Location>
+               <Location
+                  uuid = "F5FB9FA2-64BD-47A6-A99B-E4A1643E7DF4 - 8d2e5d6c8bc064c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in tableView_api_NC1.CollectionVc.APIImages(URL: Swift.String, completion: (Swift.Array&lt;tableView_api_NC1.Hero&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "tableView-api-NC1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aliesmaeili/Desktop/Xcode-projects/tableView-api-NC1/tableView-api-NC1/collectionView/CollectionVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "872">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "849976C4-847A-4A71-A324-011CD37C3ABA"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -39,47 +103,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F5FB9FA2-64BD-47A6-A99B-E4A1643E7DF4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "tableView-api-NC1/collectionView/CollectionVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "APIImages(URL:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "849976C4-847A-4A71-A324-011CD37C3ABA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "tableView-api-NC1/collectionView/CollectionVc.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "APIImages(URL:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "15E39FEC-3365-489D-B05F-5AE9782D1206"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tableView-api-NC1/collectionView/CollectionVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "APIImages(URL:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,9 +126,89 @@
             filePath = "tableView-api-NC1/collectionView/CollectionVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
             landmarkName = "downloaded(from:contentMode:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AF02093F-38DD-4AAE-AB03-3217119D0F9B - 944ea8926fbfd371"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.UIImageView.downloaded(from: Swift.String, contentMode: __C.UIViewContentMode) -&gt; ()"
+                  moduleName = "tableView-api-NC1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aliesmaeili/Desktop/Xcode-projects/tableView-api-NC1/tableView-api-NC1/collectionView/CollectionVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "177"
+                  endingLineNumber = "177"
+                  offsetFromSymbolStart = "189">
+               </Location>
+               <Location
+                  uuid = "AF02093F-38DD-4AAE-AB03-3217119D0F9B - 944ea8926fbfd371"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.UIImageView.downloaded(from: Swift.String, contentMode: __C.UIViewContentMode) -&gt; ()"
+                  moduleName = "tableView-api-NC1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aliesmaeili/Desktop/Xcode-projects/tableView-api-NC1/tableView-api-NC1/collectionView/CollectionVc.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "177"
+                  endingLineNumber = "177"
+                  offsetFromSymbolStart = "276">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7A313FE0-DA89-46F1-994D-352D45F728B3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tableView-api-NC1/collectionView/CollectionVc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4E97D3FA-CDF3-432E-BE0A-9F0A1104C04E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tableView-api-NC1/collectionView/CollectionVc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "64F056BA-EFA7-41A7-B24F-4C2D3C9A6F56"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tableView-api-NC1/collectionView/CollectionVc.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "didTabSegment(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
