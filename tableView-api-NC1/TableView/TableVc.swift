@@ -143,7 +143,6 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
                     DispatchQueue.main.async {
                         
                         completed()
-                      //  self.activeIndicator()
                     }
                     
                 } catch {
@@ -153,15 +152,4 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
             }
         }.resume()
     }
-    /* JSON Download
-     This code defines a function downloadJSON that fetches JSON data from an API and decodes it into an array of HeroStats objects.
-     
-     The function takes a closure completed as an argument that will be executed when the download and decoding is completed. The @escaping attribute on the closure indicates that the closure can outlive the function call.
-
-     Inside the function, a URL object is created from the API endpoint. Then, a data task is created using the URLSession.shared singleton to fetch the JSON data from the API.
-
-     When the data task is completed, the response is handled inside the closure passed to the dataTask method. If there is no error, the data is decoded into an array of HeroStats objects using JSONDecoder. The decoded data is assigned to the heroes property of the calling instance.
-
-     Finally, the completed closure is executed on the main thread to indicate that the download and decoding is complete.*/
-    
 }

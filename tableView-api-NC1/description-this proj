@@ -3,9 +3,20 @@ API URL : "https://api.opendota.com/api/heroStats"
 
 ..........................................................................
 
+1- JSON Download
+This code defines a function downloadJSON that fetches JSON data from an API and decodes it into an array of HeroStats objects.
 
-idea! -> add button and click on this go to link Dotabuff:(heroDetails)
-position on right the CustomTableViewCell (CELL)
+The function takes a closure completed as an argument that will be executed when the download and decoding is completed. The @escaping attribute on the closure indicates that the closure can outlive the function call.
+
+Inside the function, a URL object is created from the API endpoint. Then, a data task is created using the URLSession.shared singleton to fetch the JSON data from the API.
+
+When the data task is completed, the response is handled inside the closure passed to the dataTask method. If there is no error, the data is decoded into an array of HeroStats objects using JSONDecoder. The decoded data is assigned to the heroes property of the calling instance.
+
+Finally, the completed closure is executed on the main thread to indicate that the download and decoding is complete.
+
+2-
+
+
 
 
 
@@ -14,11 +25,9 @@ position on right the CustomTableViewCell (CELL)
 
 * update activityIndicator
 
-* update Setting for old iphones
+* update Setting for old iphones(autoLayout)
 
 * add gessher in settings (View)
-
-* add webView SAFARI
 
 
 ..............................................................................
