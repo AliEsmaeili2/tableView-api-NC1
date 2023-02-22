@@ -18,7 +18,7 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         downloadJSON {
             
             self.filteredHeroes = self.heroes
-            self.tableView.reloadData()
+            //  self.tableView.reloadData()
             
         }
         
@@ -39,9 +39,11 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
     // MARK: - SearchBar
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
         filteredHeroes = searchText.isEmpty ? heroes : heroes.filter { (hero: HeroStats) -> Bool in
             return hero.localized_name.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
         }
+        
         tableView.reloadData()
     }
     
@@ -61,8 +63,9 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         activeIndicator.startAnimating()
         activeIndicator.hidesWhenStopped = true
         // Hide the container view and stop the indicator animation
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             
+            self.tableView.reloadData()
             activeIndicator.stopAnimating()
             container.removeFromSuperview()
         }
@@ -122,7 +125,6 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         
         if let destination = segue.destination as? HeroVC {
             
-            //0 destination.hero = heroes[tableView.indexPathForSelectedRow!.row]
             destination.hero = filteredHeroes[tableView.indexPathForSelectedRow!.row]
             
         }

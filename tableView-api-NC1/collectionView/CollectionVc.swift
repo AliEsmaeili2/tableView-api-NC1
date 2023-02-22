@@ -18,20 +18,18 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
             self.heroes = result
             self.heroesStack = result
             
-            DispatchQueue.main.async {
-                
-                self.activeIndicator()
-            }
+            //            DispatchQueue.main.async {
+            //
+            //                self.activeIndicator()
+            //            }
         }
         
-        activeIndicator()
+        self.activeIndicator()
     }
     
     // MARK: - Activity Indicator
     
     func activeIndicator () {
-        
-        self.collectionView1.reloadData()
         
         let container = UIView()
         container.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
@@ -45,8 +43,9 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
         activeIndicator.startAnimating()
         activeIndicator.hidesWhenStopped = true
         // Hide the container view and stop the indicator animation
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             
+            self.collectionView1.reloadData()
             activeIndicator.stopAnimating()
             container.removeFromSuperview()
         }

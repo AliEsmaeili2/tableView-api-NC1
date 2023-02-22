@@ -17,17 +17,9 @@ Finally, the completed closure is executed on the main thread to indicate that t
 2-
 
 
-
-
-
-
 ..........................................................................
 
-* update activityIndicator
 
 * update Setting for old iphones(autoLayout)
-
-* add gessher in settings (View)
-
 
 ..............................................................................
