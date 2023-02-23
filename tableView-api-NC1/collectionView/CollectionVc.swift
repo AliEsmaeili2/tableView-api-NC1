@@ -7,9 +7,11 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
     var heroesStack = [Hero]()
     
     @IBOutlet weak var collectionView1: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         self.collectionView1.delegate = self
         self.collectionView1.dataSource = self
@@ -18,42 +20,14 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
             self.heroes = result
             self.heroesStack = result
             
-            //            DispatchQueue.main.async {
-            //
-            //                self.activeIndicator()
-            //            }
-        }
-        
-        self.activeIndicator()
-    }
-    
-    // MARK: - Activity Indicator
-    
-    func activeIndicator () {
-        
-        let container = UIView()
-        container.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-        
-        let activeIndicator = UIActivityIndicatorView(style: .large)
-        activeIndicator.center = self.view.center
-        
-        container.addSubview(activeIndicator)
-        self.view.addSubview(container)
-        
-        activeIndicator.startAnimating()
-        activeIndicator.hidesWhenStopped = true
-        // Hide the container view and stop the indicator animation
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            
-            self.collectionView1.reloadData()
-            activeIndicator.stopAnimating()
-            container.removeFromSuperview()
         }
     }
     
     // MARK: - Fetching API
     
     func APIImages(URL url:String, completion: @escaping ([Hero]) -> Void) {
+        
+        activityIndicator.startAnimating()
         
         let url = URL(string: url)
         
@@ -65,6 +39,13 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
                 
                 let fetchingData = try JSONDecoder().decode([Hero].self, from:data!)
                 completion(fetchingData)
+                
+                DispatchQueue.main.async {
+                    
+                    self.activityIndicator.stopAnimating()
+                    self.activityIndicator.hidesWhenStopped = true
+                    self.collectionView1.reloadData()
+                }
                 
             } catch {
                 

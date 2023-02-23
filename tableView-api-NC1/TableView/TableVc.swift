@@ -3,8 +3,8 @@ import UIKit
 
 class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
     
+    @IBOutlet weak var ActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
-    
     
     var heroes = [HeroStats]()
     var filteredHeroes = [HeroStats]()
@@ -18,8 +18,9 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         downloadJSON {
             
             self.filteredHeroes = self.heroes
-            //  self.tableView.reloadData()
             
+            //  self.tableView.reloadData()
+            // self.activeIndicator()
         }
         
         tableView.delegate = self
@@ -32,8 +33,6 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         searchBar.delegate = self
         tableView.tableHeaderView = searchBar
         
-        //call func
-        activeIndicator()
     }
     
     // MARK: - SearchBar
@@ -47,29 +46,6 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         tableView.reloadData()
     }
     
-    // MARK: - Activity Indicator View
-    
-    func activeIndicator () {
-        
-        let container = UIView()
-        container.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-        
-        let activeIndicator = UIActivityIndicatorView(style: .large)
-        activeIndicator.center = self.view.center
-        
-        container.addSubview(activeIndicator)
-        self.view.addSubview(container)
-        
-        activeIndicator.startAnimating()
-        activeIndicator.hidesWhenStopped = true
-        // Hide the container view and stop the indicator animation
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            
-            self.tableView.reloadData()
-            activeIndicator.stopAnimating()
-            container.removeFromSuperview()
-        }
-    }
     // MARK: - Struct & Connect-> TableView to main.storyboard
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -133,6 +109,8 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
     
     func downloadJSON(completed: @escaping () -> ()){
         
+        ActivityIndicator.startAnimating()
+        
         let url = URL(string: "https://api.opendota.com/api/heroStats")
         
         URLSession.shared.dataTask(with: url!) { (data, response, error) in
@@ -145,6 +123,9 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
                     DispatchQueue.main.async {
                         
                         completed()
+                        
+                        self.ActivityIndicator.stopAnimating()
+                        self.tableView.reloadData()
                     }
                     
                 } catch {

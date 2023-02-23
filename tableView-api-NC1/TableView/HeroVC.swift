@@ -4,6 +4,7 @@ import UIKit
 // MARK: - Download image From URL
 
 extension UIImageView {
+    
     func downloadedFrom(url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
         
         contentMode = mode
@@ -27,6 +28,7 @@ extension UIImageView {
     func downloadedFrom( link: String, contentMode mode: ContentMode = .scaleAspectFit) {
         
         guard let url = URL(string: link) else { return }
+        
         downloaded(from: url, contentMode: mode)
     }
 }
@@ -68,20 +70,21 @@ class HeroVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameLabel.text = hero?.localized_name
-        attributeLabel.text = hero?.primary_attr
-        attackLabel.text = hero?.attack_type
-        healthLabel.text = "\((hero?.base_health)!)"
-        manaLabel.text = "\((hero?.base_mana)!)"
-        strLabel.text = "\((hero?.base_str)!)"
-        agiLabel.text = "\((hero?.base_agi)!)"
-        intLabel.text = "\((hero?.base_int)!)"
-        rangeLabel.text = "\((hero?.attack_range)!)"
-        moveLabel.text = "\((hero?.move_speed)!)"
-        attackMinLabel.text = "\((hero?.base_attack_min)!)"
-        attackMaxLabel.text = "\((hero?.base_attack_max)!)"
+        nameLabel.text =        hero?.localized_name
+        attributeLabel.text =   hero?.primary_attr
+        attackLabel.text =      hero?.attack_type
+        healthLabel.text =      "\((hero?.base_health)!)"
+        manaLabel.text =        "\((hero?.base_mana)!)"
+        strLabel.text =         "\((hero?.base_str)!)"
+        agiLabel.text =         "\((hero?.base_agi)!)"
+        intLabel.text =         "\((hero?.base_int)!)"
+        rangeLabel.text =       "\((hero?.attack_range)!)"
+        moveLabel.text =        "\((hero?.move_speed)!)"
+        attackMinLabel.text =   "\((hero?.base_attack_min)!)"
+        attackMaxLabel.text =   "\((hero?.base_attack_max)!)"
         
         let urlString = "https://api.opendota.com"+(hero?.img)!
+        
         let url = URL(string: urlString)
         imageView.downloadedFrom(url : url!)
     }

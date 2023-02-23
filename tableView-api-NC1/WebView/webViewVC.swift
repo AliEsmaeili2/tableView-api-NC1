@@ -6,50 +6,27 @@ import SafariServices
 class webViewVC: UIViewController {
     
     @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var ActivityIndicator: UIActivityIndicatorView!
     
     //link webView url when loading
     let url = "https://www.dotabuff.com/heroes"
     
-    // MARK: - func viewDidLoad()
-    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
-        activeIndicator()
-    }
-    
-    // MARK: - activeIndicator()
-    
-    func activeIndicator () {
-        
-        let container = UIView()
-        container.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-        
-        let activeIndicator = UIActivityIndicatorView(style: .large)
-        activeIndicator.center = self.view.center
-        
-        container.addSubview(activeIndicator)
-        self.view.addSubview(container)
-        
-        activeIndicator.startAnimating()
-        activeIndicator.hidesWhenStopped = true
-        print("1-Loading URL -3sec")
+        ActivityIndicator.startAnimating()
         
         //urlRequest
         let urlReq = URLRequest(url: URL(string: url)!)
         
-        // Hide the container view and stop the indicator animation
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.75) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             
-            //load webview
             self.webView.load(urlReq)
-            print("2-URL Loaded")
-            
-            activeIndicator.stopAnimating()
-            container.removeFromSuperview()
-            
-            print("3-URL Stoped")
+            self.ActivityIndicator.stopAnimating()
+            self.ActivityIndicator.hidesWhenStopped = true
         }
+        
     }
     
 }
