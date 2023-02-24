@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--CollectionView-->
+        <!--Collection Vc-->
         <scene sceneID="fBf-Vn-TDm">
             <objects>
                 <viewController id="spY-gu-99B" customClass="CollectionVc" customModule="tableView_api_NC1" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,9 +28,10 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
-                                <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" id="fqG-2u-Wo5">
+                                <activityIndicatorView key="backgroundView" opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" id="fqG-2u-Wo5">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="715"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="color" systemColor="systemYellowColor"/>
                                 </activityIndicatorView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="t6n-fI-pTm" customClass="CollectionViewCell" customModule="tableView_api_NC1" customModuleProvider="target">
@@ -117,7 +118,7 @@
                             <constraint firstItem="DO0-4Y-9XW" firstAttribute="top" secondItem="nfU-S1-ROE" secondAttribute="top" constant="86" id="xyb-zW-PjZ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="CollectionView" id="9uA-6L-CiZ">
+                    <tabBarItem key="tabBarItem" title="" id="9uA-6L-CiZ">
                         <imageReference key="image" image="square.grid.3x3" catalog="system" symbolScale="large"/>
                     </tabBarItem>
                     <connections>
@@ -138,7 +139,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4zX-hJ-VqE">
-                                <rect key="frame" x="0.0" y="92" width="414" height="752"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="700"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="UHM-Fn-pTp">
                                     <rect key="frame" x="0.0" y="178" width="414" height="436"/>
@@ -669,7 +670,7 @@
             </objects>
             <point key="canvasLocation" x="860.74766355140184" y="-631.10151187904967"/>
         </scene>
-        <!--safari-->
+        <!--Web ViewVC-->
         <scene sceneID="OcH-sz-Q7u">
             <objects>
                 <viewController id="nnV-Qg-3Kb" customClass="webViewVC" customModule="tableView_api_NC1" customModuleProvider="target" sceneMemberID="viewController">
@@ -701,7 +702,7 @@
                             <constraint firstItem="zAY-wR-RpK" firstAttribute="leading" secondItem="hQY-Uh-W18" secondAttribute="leading" id="p3X-gG-X2d"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="safari" image="safari" catalog="system" badgeValue="new" id="zns-8I-xrD">
+                    <tabBarItem key="tabBarItem" title="" image="safari" catalog="system" badgeValue="new" id="zns-8I-xrD">
                         <color key="badgeColor" systemColor="systemPinkColor"/>
                     </tabBarItem>
                     <connections>
@@ -713,11 +714,11 @@
             </objects>
             <point key="canvasLocation" x="2498.5507246376815" y="258.48214285714283"/>
         </scene>
-        <!--Settings-->
+        <!--Navigation Controller-->
         <scene sceneID="6uD-wH-lTa">
             <objects>
                 <navigationController id="8Xb-hI-Dr0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="wHr-l2-Shx"/>
+                    <tabBarItem key="tabBarItem" title="" image="gear" catalog="system" id="wHr-l2-Shx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="3Pm-Uy-5DG">
                         <rect key="frame" x="0.0" y="48" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -785,11 +786,11 @@
             </objects>
             <point key="canvasLocation" x="-685.50724637681162" y="1137.0535714285713"/>
         </scene>
-        <!--TableView-->
+        <!--Navigation Controller-->
         <scene sceneID="ZSJ-Ft-Jba">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Y0-Hu-hRC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="TableView" id="yQB-RJ-eUc">
+                    <tabBarItem key="tabBarItem" title="" id="yQB-RJ-eUc">
                         <imageReference key="image" image="table" catalog="system" symbolScale="large"/>
                     </tabBarItem>
                     <toolbarItems/>
