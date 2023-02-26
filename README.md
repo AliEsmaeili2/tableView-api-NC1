@@ -8,6 +8,14 @@
     <img src="https://img.shields.io/badge/license-MIT-BLUE.svg" />
 </p>
 
+<img src="https://raw.githubusercontent.com/aliesmaeili2/tableView-api-NC1/main/Archive/tableView1.png" width="250" />
+<img src="https://raw.githubusercontent.com/aliesmaeili2/tableView-api-NC1/main/Archive/tableView2-search.png" width="250" />
+<img src="https://raw.githubusercontent.com/aliesmaeili2/tableView-api-NC1/main/Archive/tableView3-button-info.png" width="250" />
+<img src="https://raw.githubusercontent.com/aliesmaeili2/tableView-api-NC1/main/Archive/tableView4-click Cell.png" width="250" />
+<img src="https://raw.githubusercontent.com/aliesmaeili2/tableView-api-NC1/main/Archive/collectionView-str.png" width="250" /> 
+<img src="https://raw.githubusercontent.com/aliesmaeili2/tableView-api-NC1/main/Archive/webView.png" width="250" />
+
+
 
 ## Overview
 
@@ -16,30 +24,21 @@ An iOS UIKit <a href="https://api.opendota.com/api/heroStats">Dota2</a> Heroes A
 
 ## Property used in this Project
 
-✘ TableView
-<br>
-✘ CollectionVIew
-<br>
-✘ SearchBar
-<br>
-✘ ScrollView
-<br>
-✘ ActivityIndicator
-<br>
-✘ WebView
-<br>
-✘ ScrollView
-<br>
-✘ SegmentControll
+- TableView
+- CollectionVIew
+- SearchBar
+- ScrollView
+- ActivityIndicator
+- WebView
+- ScrollView
+- SegmentControll
 
 
 ## Kit used in this project
 
-✔︎ UIKit
-<br>
-✔︎ WebKit
-<br>
-
+- UIKit
+    
+- WebKit
 
 ## Requirements
 
