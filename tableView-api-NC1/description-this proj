@@ -15,48 +15,34 @@ When the data task is completed, the response is handled inside the closure pass
 Finally, the completed closure is executed on the main thread to indicate that the download and decoding is complete.
 
 2-
-    //    // MARK: - activeIndicator()
-    //
-    //    func activeIndicator () {
-    //
-    //        let container = UIView()
-    //        container.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-    //
-    //        let activeIndicator = UIActivityIndicatorView(style: .large)
-    //        activeIndicator.center = self.view.center
-    //
-    //        container.addSubview(activeIndicator)
-    //        self.view.addSubview(container)
-    //
-    //        activeIndicator.startAnimating()
-    //        activeIndicator.hidesWhenStopped = true
-    //        print("1-Loading URL -3sec")
-    //
-    //        // Hide the container view and stop the indicator animation
-    //        DispatchQueue.main.asyncAfter(deadline: .now() + 2.75) {
-    //
-    //            print("2-URL Loaded")
-    //
-    //            activeIndicator.stopAnimating()
-    //            container.removeFromSuperview()
-    //
-    //            print("3-URL Stoped")
-    //        }
-    //    }
+//    // MARK: - activeIndicator()
+//
+//    func activeIndicator () {
+//
+//        let container = UIView()
+//        container.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+//
+//        let activeIndicator = UIActivityIndicatorView(style: .large)
+//        activeIndicator.center = self.view.center
+//
+//        container.addSubview(activeIndicator)
+//        self.view.addSubview(container)
+//
+//        activeIndicator.startAnimating()
+//        activeIndicator.hidesWhenStopped = true
+//        print("1-Loading URL -3sec")
+//
+//        // Hide the container view and stop the indicator animation
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2.75) {
+//
+//            print("2-URL Loaded")
+//
+//            activeIndicator.stopAnimating()
+//            container.removeFromSuperview()
+//
+//            print("3-URL Stoped")
+//        }
+//    }
 
 
 ..........................................................................
-
-
-
-*update readme
-
-*update name tabbar and application
-
-*swift package manager
-
-*COCOPOD
-
-..............................................................................
-
-

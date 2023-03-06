@@ -6,9 +6,9 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
     @IBOutlet weak var ActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     
-    var heroes = [HeroStats]()
+    var heroes         = [HeroStats]()
     var filteredHeroes = [HeroStats]()
-    var searchBar = UISearchBar()
+    var searchBar      = UISearchBar()
     
     // MARK: - func viewDidLoad()
     
@@ -33,6 +33,23 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         searchBar.delegate = self
         tableView.tableHeaderView = searchBar
         
+        searchBar.showsCancelButton = true
+        searchBar.setShowsCancelButton(true, animated: false)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
+        // Clear search bar text
+        searchBar.text = ""
+        
+        // Hide cancel button
+        //  searchBar.showsCancelButton = false
+        searchBar.resignFirstResponder()
+        
+        // Restore filteredHeroes to the original heroes array
+        filteredHeroes = heroes
+        
+        tableView.reloadData()
     }
     
     // MARK: - SearchBar
