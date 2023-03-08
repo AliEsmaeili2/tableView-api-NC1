@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "586-5860510_high-resolution-dota-2-logo-png-transparent-png.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
