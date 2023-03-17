@@ -35,6 +35,23 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         
         searchBar.showsCancelButton = true
         searchBar.setShowsCancelButton(true, animated: false)
+        
+        if Connectivity.isConnectedToInternet() {
+            
+            print("Device is connected to the internet")
+            
+        } else {
+            
+            // Device is not connected to the internet
+            print("Device is not connected to the internet")
+            
+            let alert = UIAlertController(title: "No Internet Connection", message: "Please check your internet connection and try again.", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+        }
+        
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
