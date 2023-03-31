@@ -12,6 +12,8 @@
 		134532CC2982B0200005F008 /* Model-table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134532CB2982B0200005F008 /* Model-table.swift */; };
 		1359666729A5708300BDA81E /* webViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1359666629A5708300BDA81E /* webViewVC.swift */; };
 		13672CC92977F5B1004E6A64 /* description-this proj in Resources */ = {isa = PBXBuildFile; fileRef = 13672CC82977F5B1004E6A64 /* description-this proj */; };
+		136C252429D1A819000B66D2 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136C252329D1A819000B66D2 /* WelcomeVC.swift */; };
+		136C252729D1A96A000B66D2 /* introClassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136C252629D1A96A000B66D2 /* introClassVC.swift */; };
 		137099EA29817F0B006DDDDF /* CollectionVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137099E929817F0B006DDDDF /* CollectionVc.swift */; };
 		137F073E2986EA3D00657CAE /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137F073D2986EA3D00657CAE /* CustomTableViewCell.swift */; };
 		13AFAAEB2981933D004BD71D /* Model-collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AFAAEA2981933D004BD71D /* Model-collection.swift */; };
@@ -32,6 +34,8 @@
 		134532CB2982B0200005F008 /* Model-table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Model-table.swift"; sourceTree = "<group>"; };
 		1359666629A5708300BDA81E /* webViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webViewVC.swift; sourceTree = "<group>"; };
 		13672CC82977F5B1004E6A64 /* description-this proj */ = {isa = PBXFileReference; lastKnownFileType = text; path = "description-this proj"; sourceTree = "<group>"; };
+		136C252329D1A819000B66D2 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		136C252629D1A96A000B66D2 /* introClassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = introClassVC.swift; sourceTree = "<group>"; };
 		137099E929817F0B006DDDDF /* CollectionVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVc.swift; sourceTree = "<group>"; };
 		137F073D2986EA3D00657CAE /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		13AFAAEA2981933D004BD71D /* Model-collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Model-collection.swift"; sourceTree = "<group>"; };
@@ -113,6 +117,15 @@
 			path = WebView;
 			sourceTree = "<group>";
 		};
+		136C252529D1A821000B66D2 /* WelcomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				136C252629D1A96A000B66D2 /* introClassVC.swift */,
+				136C252329D1A819000B66D2 /* WelcomeVC.swift */,
+			);
+			path = WelcomeScreen;
+			sourceTree = "<group>";
+		};
 		13B3FBBE29B8E1AC00B5801D /* Others */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +157,7 @@
 				1325A6AF298521AF00D63604 /* Delegate */,
 				134532CD2982B0370005F008 /* collectionView */,
 				134532CE2982B0840005F008 /* TableView */,
+				136C252529D1A821000B66D2 /* WelcomeScreen */,
 				1317AECC298A9C4200ADBDA1 /* Settings */,
 				1359666829A57D1400BDA81E /* WebView */,
 				1300612F29C3253E0034DCD9 /* Internet Connection */,
@@ -229,10 +243,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				136C252729D1A96A000B66D2 /* introClassVC.swift in Sources */,
 				13167E0D298FA94F00CF07E8 /* SettingVC.swift in Sources */,
 				1359666729A5708300BDA81E /* webViewVC.swift in Sources */,
 				1300612E29C31C200034DCD9 /* Connectivity.swift in Sources */,
 				137F073E2986EA3D00657CAE /* CustomTableViewCell.swift in Sources */,
+				136C252429D1A819000B66D2 /* WelcomeVC.swift in Sources */,
 				13AFAAED298198A8004BD71D /* CollectionViewCell.swift in Sources */,
 				13E12AC72983F407007A728B /* HeroVC.swift in Sources */,
 				137099EA29817F0B006DDDDF /* CollectionVc.swift in Sources */,
