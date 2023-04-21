@@ -5,6 +5,7 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
     
     var heroes = [Hero]()
     var heroesStack = [Hero]()
+    let reachability = try! Reachability()
     
     @IBOutlet weak var collectionView1: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -12,24 +13,42 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         self.collectionView1.delegate = self
         self.collectionView1.dataSource = self
         
         APIImages(URL: "https://api.opendota.com/api/heroStats") { result in
             self.heroes = result
             self.heroesStack = result
-            
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         
-        if Connectivity.isConnectedToInternet() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
+        do{
             
-            print("Device is connected to the internet")
+            try reachability.startNotifier()
             
-        } else {
+        }catch{
             
-            // Device is not connected to the internet
-            print("Device is not connected to the internet")
+            print("could not start reachability notifier")
+        }
+    }
+    
+    @objc func reachabilityChanged(note: Notification) {
+        
+        let reachability = note.object as! Reachability
+        
+        switch reachability.connection {
+            
+        case .wifi:
+            print("Reachable via WiFi")
+            
+        case .cellular:
+            print("Reachable via Cellular")
+            
+        case .unavailable:
+            print("Network not reachable")
             
             let alert = UIAlertController(title: "No Internet Connection", message: "Please check your internet connection and try again.", preferredStyle: .alert)
             

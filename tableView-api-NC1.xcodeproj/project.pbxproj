@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1300612E29C31C200034DCD9 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1300612D29C31C200034DCD9 /* Connectivity.swift */; };
 		13167E0D298FA94F00CF07E8 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13167E0C298FA94F00CF07E8 /* SettingVC.swift */; };
+		133166AA29DEBE02008B118D /* giphy-2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 133166A729DEBE02008B118D /* giphy-2.gif */; };
+		133166AB29DEBE02008B118D /* giphy-3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 133166A829DEBE02008B118D /* giphy-3.gif */; };
+		133166AC29DEBE02008B118D /* giphy-1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 133166A929DEBE02008B118D /* giphy-1.gif */; };
+		133166E929DEE600008B118D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133166E829DEE600008B118D /* Reachability.swift */; };
 		134532CC2982B0200005F008 /* Model-table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134532CB2982B0200005F008 /* Model-table.swift */; };
 		1359666729A5708300BDA81E /* webViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1359666629A5708300BDA81E /* webViewVC.swift */; };
 		13672CC92977F5B1004E6A64 /* description-this proj in Resources */ = {isa = PBXBuildFile; fileRef = 13672CC82977F5B1004E6A64 /* description-this proj */; };
@@ -16,9 +19,9 @@
 		136C252729D1A96A000B66D2 /* introClassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136C252629D1A96A000B66D2 /* introClassVC.swift */; };
 		137099EA29817F0B006DDDDF /* CollectionVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137099E929817F0B006DDDDF /* CollectionVc.swift */; };
 		137F073E2986EA3D00657CAE /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137F073D2986EA3D00657CAE /* CustomTableViewCell.swift */; };
+		1396817829DCCC9100BCDB95 /* GIF_Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1396817729DCCC9100BCDB95 /* GIF_Load.swift */; };
 		13AFAAEB2981933D004BD71D /* Model-collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AFAAEA2981933D004BD71D /* Model-collection.swift */; };
 		13AFAAED298198A8004BD71D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AFAAEC298198A8004BD71D /* CollectionViewCell.swift */; };
-		13B3FBBD29B8E16000B5801D /* HeroStats.json in Resources */ = {isa = PBXBuildFile; fileRef = 13B3FBBC29B8E16000B5801D /* HeroStats.json */; };
 		13D555BC2975C8A100B184BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D555BB2975C8A100B184BD /* AppDelegate.swift */; };
 		13D555BE2975C8A100B184BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D555BD2975C8A100B184BD /* SceneDelegate.swift */; };
 		13D555C32975C8A100B184BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13D555C12975C8A100B184BD /* Main.storyboard */; };
@@ -29,8 +32,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1300612D29C31C200034DCD9 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		13167E0C298FA94F00CF07E8 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		133166A729DEBE02008B118D /* giphy-2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "giphy-2.gif"; path = "../../../../N-Code/gifs/giphy-2.gif"; sourceTree = "<group>"; };
+		133166A829DEBE02008B118D /* giphy-3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "giphy-3.gif"; path = "../../../../N-Code/gifs/giphy-3.gif"; sourceTree = "<group>"; };
+		133166A929DEBE02008B118D /* giphy-1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "giphy-1.gif"; path = "../../../../N-Code/gifs/giphy-1.gif"; sourceTree = "<group>"; };
+		133166E829DEE600008B118D /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		134532CB2982B0200005F008 /* Model-table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Model-table.swift"; sourceTree = "<group>"; };
 		1359666629A5708300BDA81E /* webViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webViewVC.swift; sourceTree = "<group>"; };
 		13672CC82977F5B1004E6A64 /* description-this proj */ = {isa = PBXFileReference; lastKnownFileType = text; path = "description-this proj"; sourceTree = "<group>"; };
@@ -38,9 +44,9 @@
 		136C252629D1A96A000B66D2 /* introClassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = introClassVC.swift; sourceTree = "<group>"; };
 		137099E929817F0B006DDDDF /* CollectionVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVc.swift; sourceTree = "<group>"; };
 		137F073D2986EA3D00657CAE /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		1396817729DCCC9100BCDB95 /* GIF_Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIF_Load.swift; sourceTree = "<group>"; };
 		13AFAAEA2981933D004BD71D /* Model-collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Model-collection.swift"; sourceTree = "<group>"; };
 		13AFAAEC298198A8004BD71D /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		13B3FBBC29B8E16000B5801D /* HeroStats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HeroStats.json; sourceTree = "<group>"; };
 		13D555B82975C8A100B184BD /* tableView-api-NC1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tableView-api-NC1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D555BB2975C8A100B184BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13D555BD2975C8A100B184BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +72,7 @@
 		1300612F29C3253E0034DCD9 /* Internet Connection */ = {
 			isa = PBXGroup;
 			children = (
-				1300612D29C31C200034DCD9 /* Connectivity.swift */,
+				133166E829DEE600008B118D /* Reachability.swift */,
 			);
 			path = "Internet Connection";
 			sourceTree = "<group>";
@@ -122,6 +128,10 @@
 			children = (
 				136C252629D1A96A000B66D2 /* introClassVC.swift */,
 				136C252329D1A819000B66D2 /* WelcomeVC.swift */,
+				1396817729DCCC9100BCDB95 /* GIF_Load.swift */,
+				133166A929DEBE02008B118D /* giphy-1.gif */,
+				133166A729DEBE02008B118D /* giphy-2.gif */,
+				133166A829DEBE02008B118D /* giphy-3.gif */,
 			);
 			path = WelcomeScreen;
 			sourceTree = "<group>";
@@ -130,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				13672CC82977F5B1004E6A64 /* description-this proj */,
-				13B3FBBC29B8E16000B5801D /* HeroStats.json */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -186,6 +195,8 @@
 			dependencies = (
 			);
 			name = "tableView-api-NC1";
+			packageProductDependencies = (
+			);
 			productName = "tableView-api-NC1";
 			productReference = 13D555B82975C8A100B184BD /* tableView-api-NC1.app */;
 			productType = "com.apple.product-type.application";
@@ -214,6 +225,8 @@
 				Base,
 			);
 			mainGroup = 13D555AF2975C8A100B184BD;
+			packageReferences = (
+			);
 			productRefGroup = 13D555B92975C8A100B184BD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -228,11 +241,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				133166AB29DEBE02008B118D /* giphy-3.gif in Resources */,
+				133166AA29DEBE02008B118D /* giphy-2.gif in Resources */,
 				13D555C82975C8A300B184BD /* LaunchScreen.storyboard in Resources */,
+				133166AC29DEBE02008B118D /* giphy-1.gif in Resources */,
 				13672CC92977F5B1004E6A64 /* description-this proj in Resources */,
 				13D555C52975C8A300B184BD /* Assets.xcassets in Resources */,
 				13D555C32975C8A100B184BD /* Main.storyboard in Resources */,
-				13B3FBBD29B8E16000B5801D /* HeroStats.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +261,6 @@
 				136C252729D1A96A000B66D2 /* introClassVC.swift in Sources */,
 				13167E0D298FA94F00CF07E8 /* SettingVC.swift in Sources */,
 				1359666729A5708300BDA81E /* webViewVC.swift in Sources */,
-				1300612E29C31C200034DCD9 /* Connectivity.swift in Sources */,
 				137F073E2986EA3D00657CAE /* CustomTableViewCell.swift in Sources */,
 				136C252429D1A819000B66D2 /* WelcomeVC.swift in Sources */,
 				13AFAAED298198A8004BD71D /* CollectionViewCell.swift in Sources */,
@@ -255,7 +269,9 @@
 				134532CC2982B0200005F008 /* Model-table.swift in Sources */,
 				13D555BC2975C8A100B184BD /* AppDelegate.swift in Sources */,
 				13D555BE2975C8A100B184BD /* SceneDelegate.swift in Sources */,
+				1396817829DCCC9100BCDB95 /* GIF_Load.swift in Sources */,
 				13E12AC92983F587007A728B /* TableVc.swift in Sources */,
+				133166E929DEE600008B118D /* Reachability.swift in Sources */,
 				13AFAAEB2981933D004BD71D /* Model-collection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,7 +419,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P7WPABWLSN;
+				DEVELOPMENT_TEAM = 4AKF2AAB68;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "tableView-api-NC1/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Dota2 Heroes";
@@ -435,7 +451,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P7WPABWLSN;
+				DEVELOPMENT_TEAM = 4AKF2AAB68;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "tableView-api-NC1/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Dota2 Heroes";

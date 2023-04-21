@@ -9,9 +9,9 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
     var heroes         = [HeroStats]()
     var filteredHeroes = [HeroStats]()
     var searchBar      = UISearchBar()
+    let reachability = try! Reachability()
     
     // MARK: - func viewDidLoad()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,15 +35,34 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         
         searchBar.showsCancelButton = true
         searchBar.setShowsCancelButton(true, animated: false)
+    }
+    // MARK: - func viewDidAppear
+    override func viewDidAppear(_ animated: Bool) {
         
-        if Connectivity.isConnectedToInternet() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
+        do{
             
-            print("Device is connected to the internet")
+            try reachability.startNotifier()
             
-        } else {
+        }catch{
             
-            // Device is not connected to the internet
-            print("Device is not connected to the internet")
+            print("could not start reachability notifier")
+        }
+    }
+    
+    @objc func reachabilityChanged(note: Notification) {
+        
+        let reachability = note.object as! Reachability
+        
+        switch reachability.connection {
+        case .wifi:
+            print("Reachable via WiFi")
+            
+        case .cellular:
+            print("Reachable via Cellular")
+            
+        case .unavailable:
+            print("Network not reachable")
             
             let alert = UIAlertController(title: "No Internet Connection", message: "Please check your internet connection and try again.", preferredStyle: .alert)
             
@@ -51,7 +70,6 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
             alert.addAction(okAction)
             present(alert, animated: true, completion: nil)
         }
-        
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

@@ -44,11 +44,14 @@ Finally, the completed closure is executed on the main thread to indicate that t
 //        }
 //    }
 
+alert for internet connection
+//            let alert = UIAlertController(title: "No Internet Connection", message: "Please check your internet connection and try again.", preferredStyle: .alert)
+//
+//            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+//            alert.addAction(okAction)
+//            present(alert, animated: true, completion: nil)
 
 ..........................................................................
-
-
-coreData on collectionView
 
 name proj
 
@@ -56,5 +59,3 @@ favorite hero on TableView with switch
 (need save changes on App)
 
 edit base health and base mana
-
-Error No internet connection

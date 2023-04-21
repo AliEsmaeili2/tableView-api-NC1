@@ -36,12 +36,14 @@ class WelcomeVC: UIViewController {
             let button = UIButton(frame: CGRect(x: 10, y: pageView.frame.size.height-60, width: pageView.frame.size.width-20, height: 50))
             
             label.textAlignment = .center
-            label.font = UIFont(name: "Helvetica-Bold", size: 28)
+            label.font = UIFont(name: "Chalkboard SE Regular", size: 28)
             pageView.addSubview(label)
             label.text = titles[x]
             
             imageView.contentMode = .scaleAspectFit
-          //  imageView.image = UIImage(named: "welcome-\(x + 1)")
+            
+            imageView.loadGif(name: "giphy-\(x + 1)")
+            // imageView.image = UIImage(named: "welcome-\(x + 1)")
             pageView.addSubview(imageView)
             
             button.setTitleColor(.white, for: .normal)
@@ -67,20 +69,14 @@ class WelcomeVC: UIViewController {
         
         //   guard button.tag < 3 else {
         if button.tag == 3 {
+            
             //dismiss
-            
-            
             Core.shared.isNotNewUser()
             dismiss(animated: true, completion: nil)
-    
             performSegue(withIdentifier: "showTableView", sender: self)
-
-            
         }
-     //   return
-
+        
         //Scroll to next page
         scrollView.setContentOffset(CGPoint(x: holderView.frame.size.width * CGFloat(button.tag) , y: 0), animated: true)
-        
     }
 }
