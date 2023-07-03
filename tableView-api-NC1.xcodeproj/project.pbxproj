@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13167E0D298FA94F00CF07E8 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13167E0C298FA94F00CF07E8 /* SettingVC.swift */; };
 		133166AA29DEBE02008B118D /* giphy-2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 133166A729DEBE02008B118D /* giphy-2.gif */; };
 		133166AB29DEBE02008B118D /* giphy-3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 133166A829DEBE02008B118D /* giphy-3.gif */; };
 		133166AC29DEBE02008B118D /* giphy-1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 133166A929DEBE02008B118D /* giphy-1.gif */; };
@@ -15,6 +14,7 @@
 		134532CC2982B0200005F008 /* Model-table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134532CB2982B0200005F008 /* Model-table.swift */; };
 		1359666729A5708300BDA81E /* webViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1359666629A5708300BDA81E /* webViewVC.swift */; };
 		13672CC92977F5B1004E6A64 /* description-this proj in Resources */ = {isa = PBXBuildFile; fileRef = 13672CC82977F5B1004E6A64 /* description-this proj */; };
+		1368EB4C2A5373CB00F38632 /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1368EB4B2A5373CB00F38632 /* SettingsTVC.swift */; };
 		136C252429D1A819000B66D2 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136C252329D1A819000B66D2 /* WelcomeVC.swift */; };
 		136C252729D1A96A000B66D2 /* introClassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136C252629D1A96A000B66D2 /* introClassVC.swift */; };
 		137099EA29817F0B006DDDDF /* CollectionVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137099E929817F0B006DDDDF /* CollectionVc.swift */; };
@@ -32,7 +32,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		13167E0C298FA94F00CF07E8 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		133166A729DEBE02008B118D /* giphy-2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "giphy-2.gif"; path = "../../../../N-Code/gifs/giphy-2.gif"; sourceTree = "<group>"; };
 		133166A829DEBE02008B118D /* giphy-3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "giphy-3.gif"; path = "../../../../N-Code/gifs/giphy-3.gif"; sourceTree = "<group>"; };
 		133166A929DEBE02008B118D /* giphy-1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "giphy-1.gif"; path = "../../../../N-Code/gifs/giphy-1.gif"; sourceTree = "<group>"; };
@@ -40,6 +39,7 @@
 		134532CB2982B0200005F008 /* Model-table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Model-table.swift"; sourceTree = "<group>"; };
 		1359666629A5708300BDA81E /* webViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webViewVC.swift; sourceTree = "<group>"; };
 		13672CC82977F5B1004E6A64 /* description-this proj */ = {isa = PBXFileReference; lastKnownFileType = text; path = "description-this proj"; sourceTree = "<group>"; };
+		1368EB4B2A5373CB00F38632 /* SettingsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
 		136C252329D1A819000B66D2 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		136C252629D1A96A000B66D2 /* introClassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = introClassVC.swift; sourceTree = "<group>"; };
 		137099E929817F0B006DDDDF /* CollectionVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVc.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 		1317AECC298A9C4200ADBDA1 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				13167E0C298FA94F00CF07E8 /* SettingVC.swift */,
+				1368EB4B2A5373CB00F38632 /* SettingsTVC.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -259,7 +259,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				136C252729D1A96A000B66D2 /* introClassVC.swift in Sources */,
-				13167E0D298FA94F00CF07E8 /* SettingVC.swift in Sources */,
 				1359666729A5708300BDA81E /* webViewVC.swift in Sources */,
 				137F073E2986EA3D00657CAE /* CustomTableViewCell.swift in Sources */,
 				136C252429D1A819000B66D2 /* WelcomeVC.swift in Sources */,
@@ -268,6 +267,7 @@
 				137099EA29817F0B006DDDDF /* CollectionVc.swift in Sources */,
 				134532CC2982B0200005F008 /* Model-table.swift in Sources */,
 				13D555BC2975C8A100B184BD /* AppDelegate.swift in Sources */,
+				1368EB4C2A5373CB00F38632 /* SettingsTVC.swift in Sources */,
 				13D555BE2975C8A100B184BD /* SceneDelegate.swift in Sources */,
 				1396817829DCCC9100BCDB95 /* GIF_Load.swift in Sources */,
 				13E12AC92983F587007A728B /* TableVc.swift in Sources */,
