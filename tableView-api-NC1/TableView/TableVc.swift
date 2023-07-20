@@ -119,11 +119,11 @@ class TableVc: UIViewController ,UITableViewDelegate, UITableViewDataSource, UIS
         let apiData = filteredHeroes[indexPath.row]
         
         //for load img from JSON
-        let string = "https://api.opendota.com" + (apiData.img)
+        let string = "https://api.opendota.com" + (apiData.icon)
         let url = URL(string: string)
         
         cell.imageCell.downloadedFrom(url: url!, contentMode: .scaleToFill)
-        cell.imageCell.layer.cornerRadius = cell.imageCell.frame.height / 2
+       // cell.imageCell.layer.cornerRadius = cell.imageCell.frame.height / 2
         cell.nameCell.text = apiData.localized_name
         
         // for Button
