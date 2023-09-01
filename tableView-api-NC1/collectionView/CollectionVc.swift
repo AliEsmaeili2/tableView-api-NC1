@@ -104,27 +104,32 @@ class CollectionVc: UIViewController, UICollectionViewDelegate,  UISearchBarDele
         
         if sender.selectedSegmentIndex == 1  {
             
-            heroesStack = heroes.filter({ $0.attack_type.starts(with: "R")}) //Ranged
+            heroesStack = heroes.filter({ $0.attack_type.starts(with: "Ra")}) //Ranged
         }
         
         else if sender.selectedSegmentIndex == 2  {
             
-            heroesStack = heroes.filter({ $0.attack_type.starts(with: "M")}) //Melee
+            heroesStack = heroes.filter({ $0.attack_type.starts(with: "Me")}) //Melee
         }
         
         else if sender.selectedSegmentIndex == 3  {
             
-            heroesStack = heroes.filter({ $0.primary_attr.starts(with: "s")}) //str
+            heroesStack = heroes.filter({ $0.primary_attr.starts(with: "st")}) //str
         }
         
         else if sender.selectedSegmentIndex == 4  {
             
-            heroesStack = heroes.filter({ $0.primary_attr.starts(with: "a")}) //agi
+            heroesStack = heroes.filter({ $0.primary_attr.starts(with: "ag")}) //agi
         }
         
         else if sender.selectedSegmentIndex == 5  {
             
-            heroesStack = heroes.filter({ $0.primary_attr.starts(with: "i")}) //int
+            heroesStack = heroes.filter({ $0.primary_attr.starts(with: "in")}) //int
+        }
+        
+        else if sender.selectedSegmentIndex == 6  {
+            
+            heroesStack = heroes.filter({ $0.primary_attr.starts(with: "al")}) //int
         }
         
         collectionView1.reloadData()

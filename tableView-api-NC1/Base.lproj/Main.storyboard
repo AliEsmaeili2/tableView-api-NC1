@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DO0-4Y-9XW">
-                                <rect key="frame" x="0.0" y="145" width="430" height="740"/>
+                                <rect key="frame" x="0.0" y="147" width="430" height="702"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="layoutMargins" id="lsj-xb-vyl">
                                     <size key="itemSize" width="100" height="100"/>
@@ -29,7 +29,7 @@
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <activityIndicatorView key="backgroundView" opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" id="fqG-2u-Wo5">
-                                    <rect key="frame" x="0.0" y="0.0" width="430" height="740"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="430" height="702"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="color" systemColor="systemYellowColor"/>
                                 </activityIndicatorView>
@@ -81,7 +81,7 @@
                                 </connections>
                             </collectionView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5ij-wx-cPO">
-                                <rect key="frame" x="20" y="107" width="390" height="31"/>
+                                <rect key="frame" x="10" y="107" width="410" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="TzN-72-Euy"/>
                                 </constraints>
@@ -89,9 +89,10 @@
                                     <segment title="All"/>
                                     <segment title="Ranged"/>
                                     <segment title="Melee"/>
-                                    <segment title="Strength"/>
-                                    <segment title="Agility"/>
-                                    <segment title="Intelligence"/>
+                                    <segment title="Str"/>
+                                    <segment title="Agil"/>
+                                    <segment title="Intelli"/>
+                                    <segment title="Universal"/>
                                 </segments>
                                 <connections>
                                     <action selector="didTabSegment:" destination="spY-gu-99B" eventType="valueChanged" id="ihb-jC-BAN"/>
@@ -101,26 +102,18 @@
                         <viewLayoutGuide key="safeArea" id="nfU-S1-ROE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="nfU-S1-ROE" firstAttribute="trailing" secondItem="5ij-wx-cPO" secondAttribute="trailing" constant="20" id="2cS-hb-bDt"/>
-                            <constraint firstItem="5ij-wx-cPO" firstAttribute="leading" secondItem="nfU-S1-ROE" secondAttribute="leading" constant="20" id="5hc-aU-pQ2"/>
-                            <constraint firstItem="5ij-wx-cPO" firstAttribute="leading" secondItem="nfU-S1-ROE" secondAttribute="leading" constant="20" id="E5m-Pz-n6V"/>
-                            <constraint firstItem="DO0-4Y-9XW" firstAttribute="top" secondItem="5ij-wx-cPO" secondAttribute="bottom" constant="8" id="Frk-sw-3kn"/>
-                            <constraint firstItem="nfU-S1-ROE" firstAttribute="trailing" secondItem="5ij-wx-cPO" secondAttribute="trailing" constant="20" id="IYg-bs-ugl"/>
+                            <constraint firstItem="nfU-S1-ROE" firstAttribute="trailing" secondItem="5ij-wx-cPO" secondAttribute="trailing" constant="10" id="2cS-hb-bDt"/>
+                            <constraint firstItem="5ij-wx-cPO" firstAttribute="leading" secondItem="nfU-S1-ROE" secondAttribute="leading" constant="10" id="5hc-aU-pQ2"/>
                             <constraint firstItem="nfU-S1-ROE" firstAttribute="trailing" secondItem="DO0-4Y-9XW" secondAttribute="trailing" id="N6H-qk-ACq"/>
                             <constraint firstItem="DO0-4Y-9XW" firstAttribute="centerX" secondItem="obz-By-s6P" secondAttribute="centerX" id="bz5-Vs-NiZ"/>
                             <constraint firstItem="5ij-wx-cPO" firstAttribute="top" secondItem="nfU-S1-ROE" secondAttribute="top" constant="48" id="cEs-uc-9pe"/>
-                            <constraint firstItem="5ij-wx-cPO" firstAttribute="top" secondItem="nfU-S1-ROE" secondAttribute="top" constant="48" id="eB1-hK-2Ri"/>
-                            <constraint firstItem="DO0-4Y-9XW" firstAttribute="top" secondItem="nfU-S1-ROE" secondAttribute="top" constant="86" id="eDC-tT-Hjy"/>
-                            <constraint firstItem="nfU-S1-ROE" firstAttribute="bottom" secondItem="DO0-4Y-9XW" secondAttribute="bottom" constant="-36" id="eU0-Yt-pJa"/>
-                            <constraint firstItem="DO0-4Y-9XW" firstAttribute="top" secondItem="5ij-wx-cPO" secondAttribute="bottom" constant="8" id="gRB-ud-Rpw"/>
-                            <constraint firstItem="DO0-4Y-9XW" firstAttribute="top" secondItem="5ij-wx-cPO" secondAttribute="bottom" constant="8" id="idf-Iu-LNy"/>
+                            <constraint firstItem="nfU-S1-ROE" firstAttribute="bottom" secondItem="DO0-4Y-9XW" secondAttribute="bottom" id="eU0-Yt-pJa"/>
                             <constraint firstItem="DO0-4Y-9XW" firstAttribute="leading" secondItem="nfU-S1-ROE" secondAttribute="leading" id="rwq-Lb-tzy"/>
-                            <constraint firstItem="DO0-4Y-9XW" firstAttribute="top" secondItem="5ij-wx-cPO" secondAttribute="bottom" constant="8" id="u89-J3-BYo"/>
-                            <constraint firstItem="DO0-4Y-9XW" firstAttribute="top" secondItem="nfU-S1-ROE" secondAttribute="top" constant="86" id="xyb-zW-PjZ"/>
+                            <constraint firstItem="DO0-4Y-9XW" firstAttribute="top" secondItem="5ij-wx-cPO" secondAttribute="bottom" constant="10" id="u89-J3-BYo"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Featured" id="9uA-6L-CiZ">
-                        <imageReference key="image" image="square.grid.3x3" catalog="system" symbolScale="large"/>
+                        <imageReference key="image" image="icons" symbolScale="large"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="activityIndicator" destination="fqG-2u-Wo5" id="lAJ-Vb-CCE"/>
@@ -140,7 +133,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4zX-hJ-VqE">
-                                <rect key="frame" x="0.0" y="103" width="430" height="777"/>
+                                <rect key="frame" x="0.0" y="103" width="430" height="746"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="UHM-Fn-pTp">
                                     <rect key="frame" x="0.0" y="128" width="430" height="436"/>
@@ -213,12 +206,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4zX-hJ-VqE" firstAttribute="trailing" secondItem="dzM-8H-KLQ" secondAttribute="trailing" id="EDz-Y8-5Ca"/>
-                            <constraint firstAttribute="bottom" secondItem="4zX-hJ-VqE" secondAttribute="bottom" constant="52" id="O17-PF-XwY"/>
                             <constraint firstItem="4zX-hJ-VqE" firstAttribute="leading" secondItem="EDl-xM-Ptx" secondAttribute="leading" id="PgE-gr-Kv8"/>
                             <constraint firstItem="4zX-hJ-VqE" firstAttribute="leading" secondItem="dzM-8H-KLQ" secondAttribute="leading" id="PhK-k1-Y5d"/>
                             <constraint firstAttribute="trailing" secondItem="4zX-hJ-VqE" secondAttribute="trailing" id="Pnn-SE-xkz"/>
+                            <constraint firstItem="4zX-hJ-VqE" firstAttribute="bottom" secondItem="dzM-8H-KLQ" secondAttribute="bottom" id="RPx-to-xg3"/>
                             <constraint firstItem="4zX-hJ-VqE" firstAttribute="top" secondItem="dzM-8H-KLQ" secondAttribute="top" id="Vl1-aK-GXI"/>
-                            <constraint firstAttribute="bottom" secondItem="4zX-hJ-VqE" secondAttribute="bottom" constant="52" id="vf7-Qk-Mrf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Heroes of Dota2" id="JuT-XG-3bN"/>
@@ -230,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bou-mU-tct" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5153" y="-632"/>
+            <point key="canvasLocation" x="5151.6279069767443" y="-632.18884120171674"/>
         </scene>
         <!--HeroVC-->
         <scene sceneID="fni-SV-l2V">
@@ -674,7 +666,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s5P-KI-Uml" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="860.74766355140184" y="-631.10151187904967"/>
+            <point key="canvasLocation" x="613" y="-194"/>
         </scene>
         <!--Settings-->
         <scene sceneID="1eb-uZ-fXA">
@@ -887,7 +879,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZb-1u-d0s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="860" y="1218"/>
+            <point key="canvasLocation" x="5152" y="1129"/>
         </scene>
         <!--News-->
         <scene sceneID="OcH-sz-Q7u">
@@ -905,23 +897,25 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="eCn-Gb-xGk">
-                                <rect key="frame" x="197" y="420" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="eCn-Gb-xGk">
+                                <rect key="frame" x="0.0" y="59" width="430" height="790"/>
                                 <color key="color" systemColor="systemYellowColor"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hQY-Uh-W18"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="eCn-Gb-xGk" firstAttribute="centerY" secondItem="zAY-wR-RpK" secondAttribute="centerY" id="0sW-uz-pdn"/>
-                            <constraint firstItem="eCn-Gb-xGk" firstAttribute="centerX" secondItem="zAY-wR-RpK" secondAttribute="centerX" id="9kh-dT-F7P"/>
-                            <constraint firstItem="hQY-Uh-W18" firstAttribute="bottom" secondItem="zAY-wR-RpK" secondAttribute="bottom" id="M93-91-7wN"/>
-                            <constraint firstItem="hQY-Uh-W18" firstAttribute="trailing" secondItem="zAY-wR-RpK" secondAttribute="trailing" id="Wxz-tX-iuT"/>
-                            <constraint firstItem="zAY-wR-RpK" firstAttribute="top" secondItem="hQY-Uh-W18" secondAttribute="top" id="d27-Pa-Br4"/>
-                            <constraint firstItem="zAY-wR-RpK" firstAttribute="leading" secondItem="hQY-Uh-W18" secondAttribute="leading" id="p3X-gG-X2d"/>
+                            <constraint firstItem="eCn-Gb-xGk" firstAttribute="bottom" secondItem="hQY-Uh-W18" secondAttribute="bottom" id="1Sq-Qf-Z9H"/>
+                            <constraint firstItem="zAY-wR-RpK" firstAttribute="trailing" secondItem="hQY-Uh-W18" secondAttribute="trailing" id="II7-TX-01n"/>
+                            <constraint firstItem="zAY-wR-RpK" firstAttribute="top" secondItem="hQY-Uh-W18" secondAttribute="top" id="Q1D-Bh-Ls2"/>
+                            <constraint firstItem="zAY-wR-RpK" firstAttribute="leading" secondItem="hQY-Uh-W18" secondAttribute="leading" id="QuF-HY-OSZ"/>
+                            <constraint firstItem="eCn-Gb-xGk" firstAttribute="trailing" secondItem="zAY-wR-RpK" secondAttribute="trailing" id="VZF-zS-ger"/>
+                            <constraint firstItem="zAY-wR-RpK" firstAttribute="bottom" secondItem="hQY-Uh-W18" secondAttribute="bottom" id="ZDQ-O4-lv1"/>
+                            <constraint firstItem="eCn-Gb-xGk" firstAttribute="leading" secondItem="zAY-wR-RpK" secondAttribute="leading" id="cAR-Eq-cuL"/>
+                            <constraint firstItem="eCn-Gb-xGk" firstAttribute="top" secondItem="zAY-wR-RpK" secondAttribute="top" id="hgR-OG-NAO"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="News" image="safari" catalog="system" id="zns-8I-xrD"/>
+                    <tabBarItem key="tabBarItem" title="News" image="safari" id="zns-8I-xrD"/>
                     <connections>
                         <outlet property="ActivityIndicator" destination="eCn-Gb-xGk" id="1Aw-VX-qJ8"/>
                         <outlet property="webView" destination="zAY-wR-RpK" id="Pkv-QI-C0R"/>
@@ -929,14 +923,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="syE-vL-oCh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3975.3488372093025" y="257.51072961373393"/>
+            <point key="canvasLocation" x="3077" y="215"/>
         </scene>
-        <!--List-->
+        <!--Heroes-->
         <scene sceneID="ZSJ-Ft-Jba">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Y0-Hu-hRC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List" id="yQB-RJ-eUc">
-                        <imageReference key="image" image="table" catalog="system" symbolScale="large"/>
+                    <tabBarItem key="tabBarItem" title="Heroes" id="yQB-RJ-eUc">
+                        <imageReference key="image" image="Hero" symbolScale="large"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="NtW-V9-F3m">
@@ -956,7 +950,7 @@
         <scene sceneID="Yzv-RL-eT3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UJA-oh-u8j" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="GWL-oH-6hg"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="GWL-oH-6hg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MDf-HB-g9u">
                         <rect key="frame" x="0.0" y="59" width="430" height="44"/>
@@ -969,15 +963,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XfK-FR-Sz1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="860" y="258"/>
+            <point key="canvasLocation" x="3077" y="1129"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Hero" width="24" height="24"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
-        <image name="gear" catalog="system" width="128" height="122"/>
-        <image name="safari" catalog="system" width="128" height="123"/>
-        <image name="square.grid.3x3" catalog="system" width="128" height="113"/>
-        <image name="table" catalog="system" width="128" height="93"/>
+        <image name="icons" width="24" height="24"/>
+        <image name="safari" width="24" height="24"/>
+        <image name="settings" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
