@@ -28,11 +28,14 @@ An iOS UIKit <a href="https://api.opendota.com/api/heroStats">Dota2</a> Heroes A
 - CollectionVIew
 - SearchBar
 - ScrollView
+- TabBar
 - ActivityIndicator
 - WebView
-- ScrollView
+- Model
 - SegmentControll
-
+- API
+- Network Connection Check
+- Storyboard
 
 ## Kit used in this project
 
@@ -42,11 +45,11 @@ An iOS UIKit <a href="https://api.opendota.com/api/heroStats">Dota2</a> Heroes A
 
 ## Requirements
 
-- Xcode 13 or later
+- Xcode 13.0 or later
 - iOS   13.0 or later
 
-- Targeted Device: iPhone,iPad
-- Swift Language Version: Swift_5
+- Targeted Device: iPhone, iPad
+- Swift Language Version: Swift 5
 
 ## License
 
